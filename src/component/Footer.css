@@ -1,0 +1,18 @@
+.main-footer {
+  color: white;
+  background-color: #000;
+  padding-top: 3em;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  clear: both;
+}
+.navlink {
+  color: #fff;
+  list-style-type: none;
+  text-decoration: none;
+}
+.navlink:hover {
+  color: #fff;
+  border-bottom: 1px solid rgb(165, 120, 53);
+}
