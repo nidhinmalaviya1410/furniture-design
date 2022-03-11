@@ -35,9 +35,7 @@ code {
   }
 }
 /* navbAR */
-.navbar {
-  background-color: #000;
-}
+
 .nav-link {
   color: #fff !important;
 }
@@ -63,21 +61,11 @@ code {
 
 /* contact page */
 
-.ContactInfoMain {
-  width: 350px;
-  height: 80px;
-  border: 1px solid #f8f8ff;
-  padding: 10px;
-  display: flex;
-  justify-content: start;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-}
-
 .about_main {
   max-width: 100%;
   height: auto;
-  background-image: url(images/about-main.jpg);
+  background-color: #333;
+  /* background-image: url(images/about-main.jpg); */
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -87,6 +75,7 @@ code {
 .about_content {
   margin-bottom: 30px;
 }
+
 .about_main_header h2 {
   margin-left: 30px;
   align-items: center;
@@ -96,69 +85,21 @@ code {
   line-height: 300px;
 }
 
+.about_main_desc h3 {
+  color: #feb70e;
+  width: 35%;
+  border-bottom: 1px solid #fff;
+}
+
 .about_main_desc p {
   align-items: center;
   text-align: center;
   font-weight: 600;
-  margin-top: 125px;
+  margin-top: 20px;
   justify-content: end;
   padding: 10px;
   text-align: justify;
-}
-
-.our_team {
-  color: burlywood;
-  font-weight: bold;
-  margin: 20px;
-}
-
-.our_team_img {
-  border: 1px solid burlywood;
-  border-radius: 5px;
-  padding: 20px;
-}
-
-.our_team_img img {
-  width: auto;
-  height: 80px;
-  border-radius: 100%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.our_team_img p:nth-child(2) {
-  font-size: 20px;
-  font-weight: 600;
-  text-align: center;
-  margin-top: 5px;
-}
-
-.our_team_img p:nth-child(3) {
-  color: burlywood;
-  text-align: center;
-}
-
-.our_team_img span {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.our_team_img span i {
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  margin: 10px;
-  justify-content: center;
-  text-align: center;
-  background-color: antiquewhite;
-  font-size: 30px;
-  line-height: 50px;
-}
-
-.our_team_img span i:hover {
-  color: #565387;
+  color: #feb70e;
 }
 
 .about_second_img {
@@ -185,18 +126,18 @@ code {
   margin: auto;
   padding: 50px;
 }
+.customer img {
+  margin-right: 15px;
+}
 
 .customer h3 {
   font-weight: 700;
   color: burlywood;
   margin: auto;
+  margin-bottom: 15px;
 }
 
 /*Gallery -page */
-
-.carousel {
-}
-
 .carousel-root {
   width: 100% !important;
   margin: auto !important;
@@ -221,7 +162,7 @@ code {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 6%;
+  padding-top: 15%;
   padding-bottom: 8%;
   padding-left: 5%;
   padding-right: 5%;
@@ -236,7 +177,7 @@ code {
 }
 
 .myCarousel h3 {
-  color: #222;
+  color: #fff;
   font-weight: 100;
   letter-spacing: 0.2px;
   margin-bottom: 4px;
@@ -250,14 +191,14 @@ code {
   margin-top: 0;
   padding-top: 0;
   font-weight: 500;
-  color: #787878;
+  color: #fff;
   font-size: 14px;
 }
 
 .myCarousel p {
   font-weight: 100 !important;
   line-height: 29px !important;
-  color: #222;
+  color: #fff;
   font-size: 15px;
   font-family: sans-serif;
   max-height: 67px;
@@ -293,6 +234,16 @@ code {
   top: 35% !important;
 }
 
+.carousel.carousel-slider .control-arrow control-next {
+  position: absolute;
+  right: 710px;
+}
+
+.carousel.carousel-slider .control-arrow control-prev {
+  position: absolute;
+  left: 710px;
+}
+
 .App {
   text-align: center;
 }
@@ -319,10 +270,72 @@ code {
     padding-right: 5%;
     border: 1px solid #ddd;
     height: 269px;
+    color: #000;
   }
 
+  .myCarousel h3 {
+    color: #000;
+    font-weight: 100;
+    letter-spacing: 0.2px;
+    margin-bottom: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 17px;
+  }
+
+  .myCarousel h4 {
+    text-transform: uppercase;
+    margin-top: 0;
+    padding-top: 0;
+    font-weight: 500;
+    color: #000;
+    font-size: 14px;
+  }
+
+  .myCarousel p {
+    font-weight: 100 !important;
+    line-height: 29px !important;
+    color: #000;
+    font-size: 15px;
+    font-family: sans-serif;
+    max-height: 67px;
+  }
   .carousel .slide img {
     width: 24% !important;
     border-radius: 50%;
+  }
+}
+
+/* Gallery CSS */
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+/* @media only screen and (min-width:991px && max-width: 1200px) {
+  .imagelist {
+    width: 540px;
+    height: 450px;
+  }
+} */
+
+@media screen and (max-width: 500px) {
+  .imagelist {
+    width: 540px !important;
+    height: 450px !important;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .imagelist {
+    width: 750px !important;
+    height: 650px !important;
   }
 }

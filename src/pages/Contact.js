@@ -1,73 +1,44 @@
 import React, { Component } from 'react';
+import '../index.css';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
 
 const Contact = () => {
     return (
         <>
-            {/* <div className="container">
-                <ContactInfo>
+            <MDBContainer style={{ padding: '80px', color: '#feb70e' }}>
+                <MDBRow start="0">
+                    <MDBCol md="6">
+                        <form>
+                            <p className="h4 text-center mb-4">CONTACT US</p>
+                            <label htmlFor="defaultFormContactNameEx" className="grey-text">
+                                Address :-
+                            </label>
+                            <p>118, Varni Plaza Near Sudama Chowk, Mota Varachha, Surat 395006</p>
 
-                    <div className="row">
-                        <div className="col-lg-10 offset-lg-1 d-flex justify-content-between" style={{ columnGap: 20 }}>
-                            <div className=" col-md-4 ContactInfoMain">
-                                <img src="https://img.icons8.com/office/24/000000/iphone.png" height="20px" alt="phone"></img>
-                                <div className="contact_info_content pl-1">
-                                    <div className="contact_info_title">Phone</div>
-                                    <div className="contact_info_title">+9651445551</div>
-                                </div>
-                            </div>
-                            <div className="col-md-4 ContactInfoMain">
-                                <img src="https://img.icons8.com/office/24/000000/email.png" height="20px" alt="phone"></img>
-                                <div className="contact_info_content">
-                                    <div className="contact_info_title">Email</div>
-                                    <div className="contact_info_title">+Xyz@gmail.com</div>
-                                </div>
-                            </div>
-                            <div className=" col-md-4 ContactInfoMain">
-                                <img src="https://img.icons8.com/office/24/000000/address.png" height="20px" alt="phone"></img>
-                                <div className="contact_info_content">
-                                    <div className="contact_info_title">Address</div>
-                                    <div className="contact_info_title">Surat , Gujrat</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            <br />
+                            <label htmlFor="defaultFormContactEmailEx" className="grey-text">
+                                Phone Number :-
+                            </label>
+                            <p>+9170412 22563</p>
+                            <p>+9170412 22563</p>
 
-                </ContactInfo>
-            </div>
+                            <br />
+                            <label htmlFor="defaultFormContactSubjectEx" className="grey-text">
+                                Email :-
+                            </label>
+                            <p><a href="mailto:artrueinfotech@gmail.com" style={{ listStyleType: 'none', textDecoration: 'none', color: '#fff' }}>Artrue@gmailcom</a></p>
+
+                            <br />
+                            <label htmlFor="defaultFormContactMessageEx" className="grey-text">
+                                Website :-
+                            </label>
+                            <p><a href="https://artrueinfotech.com/" target="_blank" style={{ listStyleType: 'none', textDecoration: 'none', color: '#fff' }}>www.artrue.com</a></p>
+                        </form>
+                    </MDBCol>
 
 
-            {/* // contact form */}
-            {/* <div className="container">
-                <ContactForm>
+                    {/* <MDBContainer style={{ padding: '30px' }}> */}
 
-                    <div className="row">
-                        <div className="col-lg-10 offset-lg-1 get">
-                            <div className="contact_form_container py-5">Get In Touch</div>
-
-                            <div className="form">
-                                <form id="contact-form">
-                                    <div className="col-sm-4 contact_form_name d-flex justify-content-between align-items-between">
-                                        <input type="text" className="contact_form_name inpuft_filed" placeholder="Your Name" required="true"></input>
-                                        <input type="text" className="contact_form_email inpuft_filed" placeholder="Your Email" required="true"></input>
-                                        <input type="number" className="contact_form_number inpuft_filed" placeholder="Your Phone Number" required="true"></input>
-                                    </div>
-                                    <div className="contact_form_text mt-4">
-                                        <textarea cols="30" rows="10"></textarea>
-                                    </div>
-                                    <div className="contact_form_button">
-                                        <button type="submit" className="btn btn-primary">Submit Us</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                </ContactForm>
-            </div> */}
-
-            <MDBContainer style={{ padding: '30px' }}>
-                <MDBRow center="0">
                     <MDBCol md="6">
                         <form>
                             <p className="h4 text-center mb-4">Write to us</p>
@@ -112,4 +83,9 @@ const Contact = () => {
 }
 
 export default Contact
+
+
+
+
+
 

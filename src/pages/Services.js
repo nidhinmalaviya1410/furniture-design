@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components/macro';
 import service1 from '../images/client1.png';
+import SingleService from '../component/SingleService';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Main = styled.div`
  margin: 0px auto;
@@ -47,59 +49,53 @@ const ImageBox = styled.div`
 `;
 
 const Services = () => {
+
+    const navigate = useNavigate();
+
     return (
         <>
             <Main>
                 <MainBottom>
                     <ImageBox>
-                        <a href="https://stackoverflow.com" style={{
-                            padding: '6px',
-                            border: '1px solid #EBEBEB'
-                        }}>
-                            <img src={service1} width="322" height="215" alt="1"></img>
-                        </a>
+
+                        <img src={service1} width="322" height="215" alt="1" onClick={() => navigate('/singleservice')} style={{ outline: '1px solid white', outlineOffset: '6px' }}></img>
+
                         <h3 style={{
                             textAlign: 'center',
-                            color: '#f2b522',
+                            color: '#feb70e',
                             fontFamily: 'Roboto',
                             fontWeight: '700',
                             fontStyle: 'normal',
                             textTransform: 'uppercase',
-                            margin: '15px 10px'
+                            margin: '25px 10px'
                         }}>Interior Services</h3>
                     </ImageBox>
                     <ImageBox >
-                        <a href="https://stackoverflow.com" style={{
-                            padding: '6px',
-                            border: '1px solid #EBEBEB'
-                        }}>
-                            <img src={service1} width="322" height="215" alt="1"></img>
-                        </a>
+
+                        <img src={service1} width="322" height="215" alt="1" onClick={() => navigate('/singleservice1')} style={{ outline: '1px solid white', outlineOffset: '6px' }}></img>
+
                         <h3 style={{
                             textAlign: 'center',
-                            color: '#f2b522',
+                            color: '#feb70e',
                             fontFamily: 'Roboto',
                             fontWeight: '700',
                             fontStyle: 'normal',
                             textTransform: 'uppercase',
-                            margin: '15px 10px'
+                            margin: '25px 10px'
                         }}>Interior Services</h3>
                     </ImageBox>
                     <ImageBox >
-                        <a href="https://stackoverflow.com" style={{
-                            padding: '6px',
-                            border: '1px solid #EBEBEB'
-                        }}>
-                            <img src={service1} width="322" height="215" alt="1"></img>
-                        </a>
+
+                        <img src={service1} width="322" height="215" alt="1" onClick={() => navigate('/singleservice2')} style={{ outline: '1px solid white', outlineOffset: '6px' }}></img>
+
                         <h3 style={{
                             textAlign: 'center',
-                            color: '#f2b522',
+                            color: '#feb70e',
                             fontFamily: 'Roboto',
                             fontWeight: '700',
                             fontStyle: 'normal',
                             textTransform: 'uppercase',
-                            margin: '15px 10px'
+                            margin: '25px 10px'
                         }}>Interior Services</h3>
                     </ImageBox>
 

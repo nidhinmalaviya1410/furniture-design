@@ -65,7 +65,7 @@ const InfoSection = ({ heading, paragraphOne, paragraphTwo, buttonLabel, reverse
     return (
         <Section>
             <Container>
-                <ColumnLeft>
+                <ColumnLeft style={{ color: 'white' }}>
                     <h1>{heading}</h1>
                     <p>{paragraphOne}</p>
                     <p>{paragraphTwo}</p>

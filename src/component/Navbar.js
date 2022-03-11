@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import styled, { css } from 'styled-components/macro';
 import MenuData from '../data/MenuData';
@@ -13,10 +13,15 @@ height:60px;
 display:flex;
 justify-content:space-between;
 padding:1rem 2rem;
-position:fixed;
-z-index:100;
 width:100%; 
-background:#000;
+background:transparent;
+border-bottom: 1px solid #fff;
+position: sticky;
+z-index: 999;
+`;
+
+const NavColor = styled.nav`
+background: #333333;
 `;
 
 const NavLink = css`
@@ -26,6 +31,7 @@ align-items:center;
 padding:0 1rem;
 height:100%;
 cursor:pointer;
+font-weight:bold;
 text-decoration:none;
 
 `;
@@ -62,7 +68,7 @@ ${NavLink};
 
 &:hover{
     color: #fff;
-  border-bottom: 1px solid rgb(165, 120, 53);
+  border-bottom: 1px solid #feb70e;
     
 }
 `;
@@ -80,10 +86,23 @@ const NavBtn = styled.div`
 }
 `;
 
+
 const Navbar = ({ toggle }) => {
+
+    const [colorChange, setColorchange] = useState(false);
+    const changeNavbarColor = () => {
+        if (window.scrollY >= 80) {
+            setColorchange(true);
+        }
+        else {
+            setColorchange(false);
+        }
+    };
+    window.addEventListener('scroll', changeNavbarColor);
+
+
     return (
         <>
-
             <Nav>
                 <Logo to='/'>Furtine</Logo>
                 <MenuBars onClick={toggle} />
@@ -98,7 +117,7 @@ const Navbar = ({ toggle }) => {
                     }
                 </NavMenu>
                 <NavBtn>
-                    <Button to='/contact' >Contact Us</Button>
+                    <Button to='/contact' style={{ color: 'white', fontWeight: 'bold' }} >Contact Us</Button>
                 </NavBtn>
             </Nav>
 
