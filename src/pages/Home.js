@@ -6,6 +6,7 @@ import InfoData from '../data/InfoData';
 import '../index.css';
 import Gallerys from '../component/Gallerys';
 import Testimonial from '../component/Testimonial';
+import Header from '../component/Header';
 // import PropTypes from 'prop-types';
 // import useScrollTrigger from '@mui/material/useScrollTrigger';
 // import Box from '@mui/material/Box';
@@ -63,6 +64,7 @@ const Home = () => {
 
     return (
         <div>
+
             <Hero slides={SliderData} />
             <InfoSection {...InfoData} />
             {/* <Product heading='Choose your favorite' data={ProductData}></Product> */}

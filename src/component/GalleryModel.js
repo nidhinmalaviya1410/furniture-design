@@ -7,12 +7,12 @@ class GalleryModal extends Component {
         super();
         this.handleKeyDown = this.handleKeyDown.bind(this);
     }
-    // componentDidMount() {
-    //     document.body.addEventListener('keydown', this.handleKeyDown);
-    // }
-    // componentWillUnMount() {
-    //     document.body.removeEventListener('keydown', this.handleKeyDown);
-    // }
+    componentDidMount() {
+        document.body.addEventListener('keydown', this.handleKeyDown);
+    }
+    componentWillUnmount() {
+        document.body.removeEventListener('keydown', this.handleKeyDown);
+    }
     handleKeyDown(e) {
         if (e.keyCode === 27)
             this.props.closeModal();
@@ -31,7 +31,7 @@ class GalleryModal extends Component {
         return (
             <div>
                 <div className="modal-overlay" onClick={closeModal}></div>
-                <div isOpen={!!src} className="modal">
+                <div isopen={src} className="modal">
                     <div className='modal-body'>
                         <a href="#" className='modal-close' onClick={closeModal} onKeyDown={this.handleKeyDown}>&times;</a>
                         {hasPrev && <a href="#" className='modal-prev' onClick={findPrev} onKeyDown={this.handleKeyDown}>&lsaquo;</a>}
@@ -39,6 +39,7 @@ class GalleryModal extends Component {
                         <img src={src} />
                     </div>
                 </div>
+
             </div>
         )
     }

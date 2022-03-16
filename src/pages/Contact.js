@@ -1,8 +1,25 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import '../index.css';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
 
 const Contact = () => {
+
+    const [data, setData] = useState({ defaultFormContactNameEx: '', defaultFormContactEmailEx: '', defaultFormContactSubjectEx: '', defaultFormContactMessageEx: '' });
+
+    async function submit(e) {
+        e.preventDefault();
+        const response = await fetch(`https://artrueinfotech.com/furniture/mail/mail.php?defaultFormContactNameEx=${data.defaultFormContactNameEx}&defaultFormContactEmailEx=${data.defaultFormContactEmailEx}&defaultFormContactSubjectEx=${data.defaultFormContactSubjectEx}&defaultFormContactMessageEx=${data.defaultFormContactMessageEx}`);
+        console.log(response.json);
+    }
+
+    function handle(e) {
+        const newdata = { ...data };
+        newdata[e.target.id] = e.target.value;
+        setData(newdata);
+        console.log(newdata);
+    }
+
+
     return (
         <>
             <MDBContainer style={{ padding: '80px', color: '#feb70e' }}>
@@ -40,31 +57,31 @@ const Contact = () => {
                     {/* <MDBContainer style={{ padding: '30px' }}> */}
 
                     <MDBCol md="6">
-                        <form>
+                        <form onSubmit={(e) => submit(e)}>
                             <p className="h4 text-center mb-4">Write to us</p>
                             <label htmlFor="defaultFormContactNameEx" className="grey-text">
                                 Your name
                             </label>
-                            <input type="text" id="defaultFormContactNameEx" className="form-control" />
+                            <input type="text" id="defaultFormContactNameEx" className="form-control" value={data.name} onChange={(e) => handle(e)} />
                             <br />
-                            <label htmlFor="defaultFormContactEmailEx" className="grey-text">
+                            <label htmlFor="defaultFormContactEmailEx" className="grey-text" >
                                 Your email
                             </label>
-                            <input type="email" id="defaultFormContactEmailEx" className="form-control" />
+                            <input type="email" id="defaultFormContactEmailEx" className="form-control" value={data.email} onChange={(e) => handle(e)} />
                             <br />
-                            <label htmlFor="defaultFormContactSubjectEx" className="grey-text">
+                            <label htmlFor="defaultFormContactSubjectEx" className="grey-text" >
                                 Subject
                             </label>
-                            <input type="text" id="defaultFormContactSubjectEx" className="form-control" />
+                            <input type="text" id="defaultFormContactSubjectEx" className="form-control" value={data.subject} onChange={(e) => handle(e)} />
                             <br />
-                            <label htmlFor="defaultFormContactMessageEx" className="grey-text">
+                            <label htmlFor="defaultFormContactMessageEx" className="grey-text" >
                                 Your message
                             </label>
-                            <textarea type="text" id="defaultFormContactMessageEx" className="form-control" rows="3" />
+                            <textarea type="text" id="defaultFormContactMessageEx" className="form-control" rows="3" value={data.msg} onChange={(e) => handle(e)} />
                             <div className="text-center mt-4">
-                                <MDBBtn color="warning" outline type="submit">
+                                <MDBBtn color="warning" outline >
                                     Send
-                                    <MDBIcon far icon="paper-plane" className="ml-2" />
+                                    <MDBIcon icon="paper-plane" className="ml-2" />
                                 </MDBBtn>
                             </div>
                         </form>

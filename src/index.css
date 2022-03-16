@@ -36,6 +36,15 @@ code {
 }
 /* navbAR */
 
+.navbar {
+  background-color: transparent !important;
+}
+
+.navbar.colorChange {
+  background: #333 !important;
+  border-bottom: 1px solid #fff;
+}
+
 .nav-link {
   color: #fff !important;
 }
@@ -46,7 +55,6 @@ code {
 }
 
 .navbar a {
-  font-size: 1.3rem;
   text-transform: capitalize;
 }
 
@@ -234,14 +242,14 @@ code {
   top: 35% !important;
 }
 
-.carousel.carousel-slider .control-arrow control-next {
-  position: absolute;
-  right: 710px;
+.carousel .control-prev.control-arrow {
+  left: 680px !important;
+  width: 4%;
 }
 
-.carousel.carousel-slider .control-arrow control-prev {
-  position: absolute;
-  left: 710px;
+.carousel .control-next.control-arrow {
+  right: 680px !important;
+  width: 4%;
 }
 
 .App {

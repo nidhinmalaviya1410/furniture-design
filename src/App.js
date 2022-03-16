@@ -20,6 +20,8 @@ import SingleService from './component/SingleService';
 import SingleService1 from './component/SingleService1';
 import SingleService2 from './component/SingleService2';
 
+const theme = {};
+
 function App() {
 
   const [isOpen, setIsOpen] = useState(false);

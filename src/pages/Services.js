@@ -58,7 +58,7 @@ const Services = () => {
                 <MainBottom>
                     <ImageBox>
 
-                        <img src={service1} width="322" height="215" alt="1" onClick={() => navigate('/singleservice')} style={{ outline: '1px solid white', outlineOffset: '6px' }}></img>
+                        <img src={service1} width="322" height="215" alt="1" onClick={() => navigate('/singleservice')} style={{ outline: '1px solid white', outlineOffset: '6px', cursor: 'pointer' }}></img>
 
                         <h3 style={{
                             textAlign: 'center',
@@ -72,7 +72,7 @@ const Services = () => {
                     </ImageBox>
                     <ImageBox >
 
-                        <img src={service1} width="322" height="215" alt="1" onClick={() => navigate('/singleservice1')} style={{ outline: '1px solid white', outlineOffset: '6px' }}></img>
+                        <img src={service1} width="322" height="215" alt="1" onClick={() => navigate('/singleservice1')} style={{ outline: '1px solid white', outlineOffset: '6px', cursor: 'pointer' }}></img>
 
                         <h3 style={{
                             textAlign: 'center',
@@ -86,7 +86,7 @@ const Services = () => {
                     </ImageBox>
                     <ImageBox >
 
-                        <img src={service1} width="322" height="215" alt="1" onClick={() => navigate('/singleservice2')} style={{ outline: '1px solid white', outlineOffset: '6px' }}></img>
+                        <img src={service1} width="322" height="215" alt="1" onClick={() => navigate('/singleservice2')} style={{ outline: '1px solid white', outlineOffset: '6px', cursor: 'pointer' }}></img>
 
                         <h3 style={{
                             textAlign: 'center',

@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import GalleryModal from '../component/GalleryModel';
+import React, { useState, useCallback } from 'react';
+
+import Carousel, { Modal, ModalGateway } from "react-images";
 import './contact.scss';
 // import { readdir     } from 'fs';
 
@@ -15,68 +16,54 @@ const imgUrls = ['https://source.unsplash.com/PC_lbSSxCZE/800x600', 'https://sou
 //     });
 // });
 
-class Gallery extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { currentIndex: null };
+const Gallery = () => {
 
-        this.closeModal = this.closeModal.bind(this);
-        this.findNext = this.findNext.bind(this);
-        this.findPrev = this.findPrev.bind(this);
-        this.renderImageContent = this.renderImageContent.bind(this);
-    }
-    renderImageContent(src, index) {
+
+    const [currentImage, setCurrentImage] = useState(0);
+    const [viewerIsOpen, setViewerIsOpen] = useState(false);
+
+    const renderImageContent = (src, index) => {
         return (
-            <div onClick={(e) => this.openModal(e, index)}>
-                <img src={src} key={src} />
+            <div onClick={(e) => openLightbox(e, index)}>
+                <img src={src} key={index} />
             </div>
         )
     }
-    openModal(e, index) {
-        this.setState({ currentIndex: index });
-    }
-    closeModal(e) {
-        if (e != undefined) {
-            e.preventDefault();
-        }
-        this.setState({ currentIndex: null });
-    }
-    findPrev(e) {
-        if (e != undefined) {
-            e.preventDefault();
-        }
-        this.setState(prevState => ({
-            currentIndex: prevState.currentIndex - 1
-        }));
-    }
-    findNext(e) {
-        if (e != undefined) {
-            e.preventDefault();
-        }
-        this.setState(prevState => ({
-            currentIndex: prevState.currentIndex + 1
-        }));
-    }
 
-    render() {
 
-        return (
-            <div className="gallery-container">
-                <h2 style={{ color: '#feb70e', textAlign: 'center' }}><b>GALLERY</b></h2><br />
-                <div className="gallery-grid">
-                    {imgUrls.map(this.renderImageContent)}
-                </div>
-                <GalleryModal
-                    closeModal={this.closeModal}
-                    findPrev={this.findPrev}
-                    findNext={this.findNext}
-                    hasPrev={this.state.currentIndex > 0}
-                    hasNext={this.state.currentIndex + 1 < imgUrls.length}
-                    src={imgUrls[this.state.currentIndex]}
-                />
+    const openLightbox = useCallback((event, { photo, index }) => {
+        setCurrentImage(index);
+        setViewerIsOpen(true);
+    }, []);
+
+    const closeLightbox = () => {
+        setCurrentImage(0);
+        setViewerIsOpen(false);
+    };
+
+    return (
+        <div className="gallery-container">
+            <h2 style={{ color: '#feb70e', textAlign: 'center', marginTop: '30px' }}><b>GALLERY</b></h2><br />
+            <div className="gallery-grid">
+                {imgUrls.map(renderImageContent)}
             </div>
-        )
-    }
+            <ModalGateway>
+                {viewerIsOpen ? (
+                    <Modal onClose={closeLightbox}>
+                        <Carousel
+                            currentIndex={currentImage}
+                            views={imgUrls.map(renderImageContent).map(x => ({
+                                ...x,
+                                srcset: x.srcSet,
+                                caption: x.title
+                            }))}
+                        />
+                    </Modal>
+                ) : null}
+            </ModalGateway>
+
+        </div>
+    )
 }
 
 export default Gallery;

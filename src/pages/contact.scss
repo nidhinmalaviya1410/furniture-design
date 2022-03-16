@@ -14,7 +14,7 @@ body {
     font-family: helvetica;
     position: relative;
     font-size: 100%;
-    background: #333333;
+    background: #333;
 }
 .gallery-container {
     padding: 50px 100px 100px 100px;
@@ -31,41 +31,54 @@ body {
 }
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-gap: 8px;
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
+}
 
-    $small: 400px;
-    $medium: 900px;
-    $large: 1200px;
+.gallery-grid img {
+    width: 100%;
+    border: 5px solid #fff;
+}
 
-    @media screen and (max-width: 400px) {
-        .gallery-grid {
-            //do Smth
-            grid-template-columns: repeat(1, 1fr);
-        }
-    }
-
-    @media screen and (max-width: 900px) {
-        //do Smth
-        .gallery-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-    // When above our large breakpoint, make sure we have 3 columns
-    @media screen and (max-width: 1200px) {
-        //do Smth
-        .gallery-grid {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-    img {
-        width: 100%;
-        border: 5px solid #fff;
+@media screen and (min-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
+@media screen and (min-width: 649px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (min-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+// @media (min-width: 600px) {
+//     .gallery-grid {
+//         //do Smth
+//         grid-template-columns: repeat(1, 1fr);
+//     }
+// }
+
+// @media screen and (max-width: 600px) {
+//     //do Smth
+//     .gallery-grid {
+//         grid-template-columns: repeat(2, 1fr);
+//     }
+// }
+// // When above our large breakpoint, make sure we have 3 columns
+// @media screen and (max-width: 900px) {
+//     //do Smth
+//     .gallery-grid {
+//         grid-template-columns: repeat(3, 1fr);
+//     }
+// }
+
 .gallery-grid div {
     position: relative;
     cursor: pointer;
@@ -124,28 +137,28 @@ body {
     $medium: 900px;
     $large: 1200px;
 
-    @media screen and (max-width: 300px) {
-        //do Smth
+    @media (max-width: 20em) {
         .modal {
             width: 95%;
         }
     }
-    @media screen and (max-width: 900px) {
+
+    @media (max-width: 34em) {
         //do Smth
         .modal {
             width: 80%;
         }
     }
-    @media screen and (max-width: 1200px) {
+    @media (max-width: 1200px) {
         //do Smth
         .modal {
             width: 60%;
         }
     }
-    img {
-        width: 100%;
-        border: 5px solid #fff;
-    }
+}
+.modal img {
+    width: 100%;
+    border: 5px solid #fff;
 }
 
 .modal-overlay {
@@ -192,4 +205,46 @@ body {
 }
 .modal-body {
     position: relative;
+}
+
+/* image grid styles */
+.img-grid {
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 40px;
+}
+.img-wrap {
+    overflow: hidden;
+    height: 0;
+    padding: 50% 0;
+    /* padding controls height, will always be perfectly square regardless of width */
+    position: relative;
+    opacity: 0.8;
+}
+.img-wrap img {
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 150%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* modal styles */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.backdrop img {
+    display: block;
+    max-width: 60%;
+    max-height: 80%;
+    margin: 60px auto;
+    box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
+    border: 3px solid white;
 }

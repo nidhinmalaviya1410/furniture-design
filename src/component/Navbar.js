@@ -4,24 +4,21 @@ import styled, { css } from 'styled-components/macro';
 import MenuData from '../data/MenuData';
 import { Button } from './Button';
 import { FaBars } from 'react-icons/fa';
-import Contact from '../pages/Contact';
 import '../index.css';
 
 
 const Nav = styled.nav`
-height:60px;
+height:80px;
 display:flex;
 justify-content:space-between;
 padding:1rem 2rem;
 width:100%; 
 background:transparent;
-border-bottom: 1px solid #fff;
-position: sticky;
-z-index: 999;
-`;
-
-const NavColor = styled.nav`
-background: #333333;
+position: fixed;
+font-size: 1rem;
+z-index: 30;
+transition: 0.8s all ease
+   
 `;
 
 const NavLink = css`
@@ -67,9 +64,14 @@ const NavMenuLinks = styled(Link)`
 ${NavLink};
 
 &:hover{
-    color: #fff;
+  transition: all ease-in-out .2s;
+  color: #fff;
   border-bottom: 1px solid #feb70e;
     
+}
+
+&:active{
+border-bottom: 1px solid #fff;
 }
 `;
 
@@ -91,7 +93,7 @@ const Navbar = ({ toggle }) => {
 
     const [colorChange, setColorchange] = useState(false);
     const changeNavbarColor = () => {
-        if (window.scrollY >= 80) {
+        if (window.scrollY > 310) {
             setColorchange(true);
         }
         else {
@@ -103,21 +105,22 @@ const Navbar = ({ toggle }) => {
 
     return (
         <>
-            <Nav>
+            <Nav className={colorChange ? 'navbar colorChange' : 'navbar'} >
                 <Logo to='/'>Furtine</Logo>
                 <MenuBars onClick={toggle} />
                 <NavMenu >
                     {MenuData.map((item, index) => {
                         return (
-                            <NavMenuLinks to={item.link} key={index}>
+                            <NavMenuLinks to={item.link} key={index} exact={true} activeClassName='is-active'>
                                 {item.title}
                             </NavMenuLinks>
+
                         );
                     })
                     }
                 </NavMenu>
                 <NavBtn>
-                    <Button to='/contact' style={{ color: 'white', fontWeight: 'bold' }} >Contact Us</Button>
+                    <Button to='/contact' style={{ color: 'white', fontWeight: 'bold', textTransform: 'capitalize' }} >Contact Us</Button>
                 </NavBtn>
             </Nav>
 
