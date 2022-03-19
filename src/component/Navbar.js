@@ -70,9 +70,6 @@ ${NavLink};
     
 }
 
-&:active{
-border-bottom: 1px solid #fff;
-}
 `;
 
 const NavBtn = styled.div`
@@ -111,7 +108,9 @@ const Navbar = ({ toggle }) => {
                 <NavMenu >
                     {MenuData.map((item, index) => {
                         return (
-                            <NavMenuLinks to={item.link} key={index} exact={true} activeClassName='is-active'>
+                            <NavMenuLinks to={item.link} key={index} className={({ isActive }) =>
+                                isActive ? 'bg-green-500 font-bold' : 'bg-red-500 font-thin'
+                            }>
                                 {item.title}
                             </NavMenuLinks>
 
