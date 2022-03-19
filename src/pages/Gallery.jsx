@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Carousel, { Modal, ModalGateway } from "react-images";
 import './contact.scss';
@@ -36,6 +36,21 @@ const Gallery = () => {
         setCurrentImage(0);
         setViewerIsOpen(false);
     };
+
+
+    // useEffect(() => {
+    //     async function fetchMyAPI() {
+    //         let response = await fetch(`https://artrueinfotech.com/furniture/employee_action.php?action=GET_ALL`);
+    //         response = await response.json();
+    //         setTimeout(() => {
+    //             console.log(response);
+    //         }, 2000);
+    //     }
+
+    //     fetchMyAPI()
+    // }, []);
+
+
     return (
         <div className="gallery-container">
             <h2 style={{ color: '#feb70e', textAlign: 'center', marginTop: '30px' }}><b>GALLERY</b></h2><br />
@@ -47,8 +62,9 @@ const Gallery = () => {
                                 <img src={photo.src} key={index} />
                                 <div className='mybtnwrapper'>
                                     <div className='mybtn'>
-                                        {isAll && (<ArrowCircleRightIcon fontSize='large' onClick={() => openCategory(index, photo)}>Category</ArrowCircleRightIcon>)}
+                                        {isAll && (<ArrowCircleRightIcon fontSize='large' onClick={() => openCategory(index, photo)} style={{ marginRight: '20px' }}>Category</ArrowCircleRightIcon>)}
                                         <AddCircleOutlineIcon fontSize='large' onClick={() => openLightbox(index, photo)} >add_circle</AddCircleOutlineIcon>
+                                        <h4>{photo.category}</h4>
                                     </div>
                                 </div>
                             </div>
@@ -73,4 +89,3 @@ const Gallery = () => {
 }
 
 export default Gallery;
-

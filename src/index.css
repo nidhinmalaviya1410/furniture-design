@@ -169,7 +169,7 @@ code {
 
 .myCarousel {
   /* background: #fafafa; */
-  background-image: url(images/carousal.jpg);
+  background-image: url(images/carousal.png);
   margin-top: -6%;
   width: 100%;
   margin-left: auto;
@@ -178,8 +178,10 @@ code {
   padding-bottom: 8%;
   padding-left: 5%;
   padding-right: 5%;
-  border: 1px solid #ddd;
-  height: 400px;
+  height: 450px;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .carousel .control-dots {
@@ -189,31 +191,38 @@ code {
 }
 
 .myCarousel h3 {
+  position: relative;
   color: #fff;
   font-weight: 100;
   letter-spacing: 0.2px;
   margin-bottom: 4px;
-  font-weight: 600;
+  font-weight: bold;
   text-transform: uppercase;
   font-size: 17px;
+  top: 20% !important;
 }
 
 .myCarousel h4 {
+  position: relative;
   text-transform: uppercase;
   margin-top: 0;
   padding-top: 0;
-  font-weight: 500;
+  font-weight: bold;
   color: #fff;
   font-size: 14px;
+  top: 20% !important;
 }
 
 .myCarousel p {
+  position: relative;
   font-weight: 100 !important;
   line-height: 29px !important;
   color: #fff;
   font-size: 15px;
   font-family: sans-serif;
   max-height: 67px;
+  font-weight: bold;
+  top: 20% !important;
 }
 
 .myCarousel p:before {
@@ -243,7 +252,7 @@ code {
   background: #000 !important;
   height: 50px !important;
   position: absolute;
-  top: 35% !important;
+  top: 20% !important;
 }
 
 .carousel .control-prev.control-arrow {

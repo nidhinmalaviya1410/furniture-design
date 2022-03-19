@@ -9,7 +9,7 @@ import Contact from './pages/Contact';
 import Services from './pages/Services';
 import Home from './pages/Home';
 import About from './pages/About';
-import Gallery from './pages/Gallery';
+// import Gallery from './pages/Gallery';
 import SingleService from './component/SingleService';
 import SingleService1 from './component/SingleService1';
 import SingleService2 from './component/SingleService2';
@@ -20,6 +20,7 @@ import Fab from '@mui/material/Fab';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Zoom from '@mui/material/Zoom';
 import Toolbar from '@mui/material/Toolbar';
+import Gallery from './pages/Gallery';
 
 const theme = {};
 

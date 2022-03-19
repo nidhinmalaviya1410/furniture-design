@@ -6,6 +6,7 @@ import { makeStyles } from '@mui/styles';
 import { useTheme } from "@mui/styles";
 import Paper from '@mui/material/Paper';
 import { photos } from "./photos";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 const Hover = styled.div`
   position: absolute;
@@ -49,10 +50,10 @@ const Gallerys = () => {
 
     const classes = useStyles();
 
-    const openLightbox = useCallback((event, { photo, index }) => {
+    const openLightbox = (index, photo) => {
         setCurrentImage(index);
         setViewerIsOpen(true);
-    }, []);
+    };
 
     const closeLightbox = () => {
         setCurrentImage(0);
@@ -63,11 +64,30 @@ const Gallerys = () => {
 
     return (
         <div>
-            <h2 style={{ textAlign: 'center', color: 'white', borderBottom: '2px solid #feb70e' }}>GALLERY</h2>
+            {/* <h2 style={{ textAlign: 'center', color: 'white', borderBottom: '2px solid #feb70e' }}>GALLERY</h2>
 
             <Paper className={classes.paper}>
                 {/* <Hover /> */}
-                <Gallery margin={columnNumber} photos={photos} onClick={openLightbox} className={classes.gallery} />
+            {/* <Gallery margin={columnNumber} photos={photos} onClick={openLightbox} className={classes.gallery} />  */}
+
+
+            <div className="gallery-container">
+                <h2 style={{ textAlign: 'center', color: 'white', borderBottom: '2px solid #feb70e', fontWeight: 'bold' }}>GALLERY</h2><br />
+                <div className="gallery-grid">
+                    {photos.map((photo, index) => {
+                        return (
+                            <React.Fragment>
+                                <div className='imageContainer'>
+                                    <img src={photo.src} key={index} />
+                                    <div className='mybtnwrapper'>
+                                        <div className='mybtn'>
+                                            <AddCircleOutlineIcon fontSize='large' onClick={() => openLightbox(index, photo)} >add_circle</AddCircleOutlineIcon>
+                                        </div>
+                                    </div>
+                                </div>
+                            </React.Fragment>)
+                    })}
+                </div>
 
                 <ModalGateway>
                     {viewerIsOpen ? (
@@ -83,7 +103,8 @@ const Gallerys = () => {
                         </Modal>
                     ) : null}
                 </ModalGateway>
-            </Paper>
+                {/* </Paper> */}
+            </div>
         </div>
     )
 }

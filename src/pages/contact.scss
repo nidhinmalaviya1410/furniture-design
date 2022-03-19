@@ -148,7 +148,7 @@ body {
 
 .imageContainer img {
     width: 100%;
-    height: auto;
+    height: 300px;
     transition: 0.5s all ease-in-out;
 }
 
@@ -187,4 +187,15 @@ body {
     opacity: 1;
     zoom: normal;
     cursor: pointer;
+}
+
+.mybtn h4 {
+    width: 100%;
+    position: relative;
+    height: 80px;
+    bottom: -12%;
+    display: flex;
+    background-color: #222;
+    align-items: center;
+    justify-content: center;
 }
