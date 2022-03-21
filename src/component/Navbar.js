@@ -106,17 +106,21 @@ const Navbar = ({ toggle }) => {
                 <Logo to='/'>Furtine</Logo>
                 <MenuBars onClick={toggle} />
                 <NavMenu >
+
                     {MenuData.map((item, index) => {
                         return (
-                            <NavMenuLinks to={item.link} key={index} className={({ isActive }) =>
-                                isActive ? 'bg-green-500 font-bold' : 'bg-red-500 font-thin'
-                            }>
+                            <NavMenuLinks to={item.link} key={index}>
                                 {item.title}
                             </NavMenuLinks>
 
                         );
+
                     })
                     }
+                    {/* <NavMenuLinks to="/" exact activeClassName="menu_active" >HOME</NavMenuLinks>
+                    <NavMenuLinks to="/about" activeClassName="menu_active" >ABOUT US</NavMenuLinks>
+                    <NavMenuLinks to="/services" activeClassName="menu_active">SERVICES</NavMenuLinks>
+                    <NavMenuLinks to="/gallery" activeClassName="menu_active" >GALLERY</NavMenuLinks> */}
                 </NavMenu>
                 <NavBtn>
                     <Button to='/contact' style={{ color: 'white', fontWeight: 'bold', textTransform: 'capitalize' }} >Contact Us</Button>

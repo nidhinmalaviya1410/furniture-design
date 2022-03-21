@@ -71,9 +71,33 @@ max-width:1600px;
 width:calc(100%-100px); 
 color:#fff;
 
-${'' /* h1{
-    font-size:clamp(1rem,8vw,20rem);
-} */}
+${`h1{
+    font-size: 60px;
+    text-align: center;
+} `};
+
+@media (max-width: 768px) {
+    ${`h1{
+        font-size: 50px;
+        text-align: center;
+    }`}
+  }
+
+${`p{
+    max-width:1134px;
+    font-size: 28px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+} `}
+
+@media (max-width: 768px) {
+    ${`p{
+        max-width:425px;
+        font-size: 20px;
+        text-align: center;
+    }`}
+  }
 `;
 const Arrow = styled(IoMdArrowRoundForward)`
 margin-left:10px;
@@ -163,10 +187,10 @@ const Hero = ({ slides }) => {
                                     <HeroContent>
                                         <h1>{slide.title}</h1>
                                         <p>{slide.price}</p>
-                                        <Button to={slide.path} primary='true' css={`max-width:160px`}>
+                                        {/* <Button to={slide.path} primary='true' css={`max-width:160px`}>
                                             {slide.label}
                                             <Arrow />
-                                        </Button>
+                                        </Button> */}
                                     </HeroContent>
                                 </HeroSlider>
                             )}

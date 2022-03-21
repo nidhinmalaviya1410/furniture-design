@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../index.css';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
 
 const Contact = () => {
 
@@ -57,7 +59,7 @@ const Contact = () => {
                     {/* <MDBContainer style={{ padding: '30px' }}> */}
 
                     <MDBCol md="6">
-                        <form onSubmit={(e) => submit(e)}>
+                        <form>
                             <p className="h4 text-center mb-4">Write to us</p>
                             <label htmlFor="defaultFormContactNameEx" className="grey-text">
                                 Your name
@@ -79,10 +81,9 @@ const Contact = () => {
                             </label>
                             <textarea type="text" id="defaultFormContactMessageEx" className="form-control" rows="3" value={data.msg} onChange={(e) => handle(e)} />
                             <div className="text-center mt-4">
-                                <MDBBtn color="warning" outline >
+                                <Button variant="contained" color="warning" onClick={(e) => submit(e)} endIcon={<SendIcon />}>
                                     Send
-                                    <MDBIcon icon="paper-plane" className="ml-2" />
-                                </MDBBtn>
+                                </Button>
                             </div>
                         </form>
                     </MDBCol>
