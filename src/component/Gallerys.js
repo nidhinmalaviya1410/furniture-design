@@ -7,7 +7,7 @@ import { useTheme } from "@mui/styles";
 import Paper from '@mui/material/Paper';
 import { photos } from "./photos";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-
+var find = require('list-files');
 const Hover = styled.div`
   position: absolute;
     top: 0;
@@ -61,7 +61,25 @@ const Gallerys = () => {
     };
 
     const columnNumber = 10;
+    console.log("meet 1");
+    // find(function(result){
+    //     console.log(result);
+    // },{
+    //     dir:'images'
+    // });
+    // const fs = require('fs');
+    // const dir = '../images'
+    // const files = fs.readdirSync(dir);
+    // for (const file of files) {
+    //     console.log(file);
+    // }
 
+    function importAll(r) {
+        return r.keys();
+    }
+
+    const images = importAll(require.context('../images', false, /\.(png|jpe?g|svg)$/));
+    console.log(images);
     return (
         <div>
             {/* <h2 style={{ textAlign: 'center', color: 'white', borderBottom: '2px solid #feb70e' }}>GALLERY</h2>

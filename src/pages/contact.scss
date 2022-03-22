@@ -188,14 +188,14 @@ body {
 
 .mybtn {
     position: absolute;
-    top: 50%;
-    left: 0;
     width: 100%;
     height: 100%;
     opacity: 0;
     display: inline-block;
     text-align: center;
     transition: opacity 0.25s;
+    display: flex;
+    justify-content: center;
 }
 
 .mybtn:hover {
@@ -208,9 +208,13 @@ body {
     width: 100%;
     position: relative;
     height: 80px;
-    bottom: -12%;
     display: flex;
     background-color: #222;
     align-items: center;
     justify-content: center;
+    align-self: flex-end;
+}
+
+.mybtn svg {
+    align-self: center;
 }
