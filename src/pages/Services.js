@@ -1,11 +1,11 @@
 import React from 'react';
 import styled, { css } from 'styled-components/macro';
 import service1 from '../images/client1.png';
-import SingleService from '../component/SingleService';
+import RouteDetail from '../component/RouteDetail';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Main = styled.div`
- margin: 0px auto;
+ margin: 80px auto;
  max-width: 1140px;
  width: 100%;
  height:100%;
@@ -54,11 +54,9 @@ const Services = () => {
 
     return (
         <>
+            <RouteDetail route="SERVICES" path="Home/Service" />
             <Main>
                 <MainBottom>
-                    <div className='about_main_desc' style={{ marginTop: '50px' }}>
-                        <h3><b>SERVICES</b></h3><br />
-                    </div>
                     <ImageBox>
 
                         <img src={service1} width="322" height="215" alt="1" onClick={() => navigate('/singleservice')} style={{ outline: '1px solid white', outlineOffset: '6px', cursor: 'pointer' }}></img>

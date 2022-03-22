@@ -17,13 +17,16 @@ body {
     background: #333;
 }
 .gallery-container {
-    padding: 50px 100px 100px 100px;
+    padding: 160px 100px 100px 100px;
     // background: #d1913c;
 }
 
+.gallery-container1 {
+    padding: 10px 100px 100px 100px;
+}
 @media screen and (max-width: 480px) {
     .gallery-container {
-        padding: 20px 40px 40px 40px;
+        padding: 100px 40px 40px 40px;
     }
 }
 

@@ -4,6 +4,7 @@ import Carousel, { Modal, ModalGateway } from "react-images";
 import './contact.scss';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import RouteDetail from '../component/RouteDetail';
 
 
 const Gallery = () => {
@@ -74,40 +75,43 @@ const Gallery = () => {
     const marginValue = isAll ? '50px' : 0;
 
     return (
-        <div className="gallery-container">
-            <h2 style={{ color: '#feb70e', textAlign: 'center', marginTop: '30px' }}><b>GALLERY</b></h2><br />
-            <div className="gallery-grid">
-                {categoryPhotos.map((photo, index) => {
-                    console.log(photo.src);
-                    return (
-                        <React.Fragment>
-                            <div className='imageContainer'>
-                                <img src={require(`${photo.src}`).default} key={index} />
-                                <div className='mybtnwrapper'>
-                                    <div className='mybtn'>
-                                        {isAll && (<ArrowCircleRightIcon fontSize='large' onClick={() => openCategory(index, photo)} style={{ marginRight: '52px', position: 'absolute' }}>Category</ArrowCircleRightIcon>)}
-                                        <AddCircleOutlineIcon fontSize='large' onClick={() => openLightbox(index, photo)} style={{ marginLeft: marginValue, position: 'absolute' }}>add_circle</AddCircleOutlineIcon>
-                                        <h4>{photo.category}</h4>
+        <>
+            <RouteDetail route="GALLERY" path="Home/Gallery" />
+            <div className="gallery-container">
+
+                <div className="gallery-grid">
+                    {categoryPhotos.map((photo, index) => {
+                        console.log(photo.src);
+                        return (
+                            <React.Fragment>
+                                <div className='imageContainer'>
+                                    <img src={require(`${photo.src}`).default} key={index} />
+                                    <div className='mybtnwrapper'>
+                                        <div className='mybtn'>
+                                            {isAll && (<ArrowCircleRightIcon fontSize='large' onClick={() => openCategory(index, photo)} style={{ marginRight: '52px', position: 'absolute' }}>Category</ArrowCircleRightIcon>)}
+                                            <AddCircleOutlineIcon fontSize='large' onClick={() => openLightbox(index, photo)} style={{ marginLeft: marginValue, position: 'absolute' }}>add_circle</AddCircleOutlineIcon>
+                                            <h4>{photo.category}</h4>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </React.Fragment>)
-                })}
-            </div>
-            <ModalGateway>
-                {viewerIsOpen ? (
-                    <Modal onClose={closeLightbox}>
-                        <Carousel
-                            currentIndex={currentImage}
-                            views={categoryPhotos.map(x => ({
-                                src: require(`${x.src }`).default,
-                            }))}
-                        />
-                    </Modal>
-                ) : null}
-            </ModalGateway>
+                            </React.Fragment>)
+                    })}
+                </div>
+                <ModalGateway>
+                    {viewerIsOpen ? (
+                        <Modal onClose={closeLightbox}>
+                            <Carousel
+                                currentIndex={currentImage}
+                                views={categoryPhotos.map(x => ({
+                                    src: require(`${x.src}`).default,
+                                }))}
+                            />
+                        </Modal>
+                    ) : null}
+                </ModalGateway>
 
-        </div>
+            </div>
+        </>
     )
 }
 
