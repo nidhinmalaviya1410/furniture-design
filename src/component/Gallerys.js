@@ -1,32 +1,8 @@
-import React, { useState, useCallback } from "react";
-import Gallery from "react-photo-gallery";
-import styled, { css } from 'styled-components/macro';
+import React, { useState } from "react";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import { makeStyles } from '@mui/styles';
-import { useTheme } from "@mui/styles";
-import Paper from '@mui/material/Paper';
 import { photos } from "./photos";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-var find = require('list-files');
-const Hover = styled.div`
-  position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    display: inline-block;
-    background: rgba(0, 0, 0, 0.5);
-    text-align: center;
-    transition: opacity 0.25s;
-
-&:hover{
-    opacity: 1;
-    zoom: normal;
-    cursor: pointer;
-}
-`;
-
 
 const useStyles = makeStyles(theme => ({
 

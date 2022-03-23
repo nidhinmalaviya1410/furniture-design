@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import Carousel, { Modal, ModalGateway } from "react-images";
 import './contact.scss';
@@ -100,7 +100,7 @@ const Gallery = () => {
                         <Carousel
                             currentIndex={currentImage}
                             views={categoryPhotos.map(x => ({
-                                src: require(`${x.src }`).default,
+                                src: require(`${x.src}`).default,
                             }))}
                         />
                     </Modal>
