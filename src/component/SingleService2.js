@@ -1,10 +1,12 @@
 import React from 'react';
 import client1 from '../images/client1.png';
+import RouteDetail from './RouteDetail';
 import '../index.css';
 
 const SingleService2 = () => {
     return (
         <>
+            <RouteDetail route="SERVICES" path="Home/Service/Furniture" />
             <div className="container-fulid" style={{ width: '100%', height: 'auto' }}>
                 <div className="row">
                     <div className="col-lg-12">

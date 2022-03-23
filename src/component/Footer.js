@@ -3,22 +3,14 @@ import { NavLink } from "react-router-dom";
 import "./Footer.css";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 
-
-import styled, { css } from 'styled-components/macro';
 import '../index.css';
 
-
-// const NavLink = css`
-// color: #fff;
-//   list-style-type: none;
-//   text-decoration: none;
-// `;
 
 const Footer = () => {
     return (
         <div className="main-footer">
             <div className="container">
-                <div className="row">
+                <div className="row m-footer">
                     {/* Column1 */}
                     <div className="col">
                         <h4>Furtine</h4>
@@ -69,7 +61,7 @@ const Footer = () => {
                     </p>
                 </div>
             </div>
-        </div >
+        </div>
     );
 }
 

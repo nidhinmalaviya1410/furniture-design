@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import client1 from '../images/client1.png';
 import '../index.css';
 
 export default class Testimonials extends Component {
@@ -9,12 +8,12 @@ export default class Testimonials extends Component {
         return (
             <Carousel
                 className="carousel"
-                showArrows={true}
+                showArrows={false}
                 infiniteLoop={true}
                 showThumbs={false}
                 showStatus={false}
                 autoPlay={true}
-                interval={6100}
+                interval={3000}
             >
                 <div>
                     <div className="myCarousel">

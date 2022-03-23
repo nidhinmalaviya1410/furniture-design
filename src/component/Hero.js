@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components/macro';
-import { SliderData } from '../data/SliderData';
-import { Button } from './Button';
 import { IoMdArrowRoundForward } from 'react-icons/io';
 import { IoArrowForward, IoArrowBack } from 'react-icons/io5'
 
@@ -60,6 +58,7 @@ left:0;
 width:100vw;
 height:100vh;
 object-fit:cover;
+opacity: 0.5;
 
 `;
 const HeroContent = styled.div`
@@ -70,22 +69,23 @@ flex-direction:column;
 max-width:1600px;
 width:calc(100%-100px); 
 color:#fff;
+opacity:1;
 
 ${`h1{
-    font-size: 60px;
+    font-size: 40px;
     text-align: center;
 } `};
 
 @media (max-width: 768px) {
     ${`h1{
-        font-size: 50px;
+        font-size: 30px;
         text-align: center;
     }`}
   }
 
 ${`p{
     max-width:1134px;
-    font-size: 28px;
+    font-size: 24px;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -94,7 +94,7 @@ ${`p{
 @media (max-width: 768px) {
     ${`p{
         max-width:425px;
-        font-size: 20px;
+        font-size: 15px;
         text-align: center;
     }`}
   }
@@ -187,10 +187,6 @@ const Hero = ({ slides }) => {
                                     <HeroContent>
                                         <h1>{slide.title}</h1>
                                         <p>{slide.price}</p>
-                                        {/* <Button to={slide.path} primary='true' css={`max-width:160px`}>
-                                            {slide.label}
-                                            <Arrow />
-                                        </Button> */}
                                     </HeroContent>
                                 </HeroSlider>
                             )}
