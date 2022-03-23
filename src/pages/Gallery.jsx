@@ -60,18 +60,6 @@ const Gallery = () => {
         setViewerIsOpen(false);
     };
 
-
-    // useEffect(() => {
-    //     async function fetchMyAPI() {
-    //         let response = await fetch(`https://artrueinfotech.com/furniture/employee_action.php?action=GET_ALL`);
-    //         response = await response.json();
-    //         setTimeout(() => {
-    //             console.log(response);
-    //         }, 2000);
-    //     }
-
-    //     fetchMyAPI()
-    // }, []);
     const marginValue = isAll ? '50px' : 0;
 
     return (
