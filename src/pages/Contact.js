@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import '../index.css';
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
+import { MDBContainer, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
+import RouteDetail from '../component/RouteDetail';
 
 const Contact = () => {
 
@@ -24,7 +25,8 @@ const Contact = () => {
 
     return (
         <>
-            <MDBContainer style={{ padding: '80px', color: '#feb70e' }}>
+            <RouteDetail route="SERVICES" path="Home/Service" />
+            <MDBContainer style={{ padding: '130px 80px 80px 80px', color: '#feb70e' }}>
                 <MDBRow start="0">
                     <MDBCol md="6">
                         <form>

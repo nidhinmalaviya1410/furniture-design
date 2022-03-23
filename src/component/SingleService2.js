@@ -9,9 +9,11 @@ const SingleService2 = () => {
                 <div className="row">
                     <div className="col-lg-12">
                         <div className="about_main">
-                            <div className="row" style={{ padding: '100px' }}>
+                            <div className="row">
                                 <div className="col-md-8 about_main_desc">
-                                    <h3><b>FURNITURE AND SOFA</b></h3><br />
+                                    <div style={{ width: '70%', height: '5%' }}>
+                                        <h3><b>FURNITURE AND SOFA</b></h3><br />
+                                    </div>
                                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
                                         It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English
                                         It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English

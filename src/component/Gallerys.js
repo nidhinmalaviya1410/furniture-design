@@ -38,17 +38,7 @@ const Gallerys = () => {
 
     const columnNumber = 10;
     console.log("meet 1");
-    // find(function(result){
-    //     console.log(result);
-    // },{
-    //     dir:'images'
-    // });
-    // const fs = require('fs');
-    // const dir = '../images'
-    // const files = fs.readdirSync(dir);
-    // for (const file of files) {
-    //     console.log(file);
-    // }
+
 
     function importAll(r) {
         return r.keys();
@@ -65,7 +55,7 @@ const Gallerys = () => {
             {/* <Gallery margin={columnNumber} photos={photos} onClick={openLightbox} className={classes.gallery} />  */}
 
 
-            <div className="gallery-container">
+            <div className="gallery-container1">
                 <h2 style={{ textAlign: 'center', color: 'white', borderBottom: '2px solid #feb70e', fontWeight: 'bold' }}>GALLERY</h2><br />
                 <div className="gallery-grid">
                     {photos.map((photo, index) => {
