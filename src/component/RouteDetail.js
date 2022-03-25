@@ -38,10 +38,10 @@ const PathTop = styled.div`
 `;
 
 const Path = styled.div`
-
-&:hover{
-    color: #000;
-}
+cursor: ${props => (props.isClickable ? 'pointer' : 'default')};
+&:hover {
+    color: ${props => (props.isClickable && 'black')};
+  }
 `;
 
 
@@ -68,7 +68,7 @@ const RouteDetail = (props) => {
                             <h2>{props.route}</h2>
                             <PathTop >
                                 {pathArray.map((route, index) => (
-                                    <Path onClick={index < pathArray.length - 1 ? () => handleClick(route) : () => {/* nothing to do */ }}>
+                                    <Path isClickable={index < pathArray.length - 1} onClick={index < pathArray.length - 1 ? () => handleClick(route) : () => {/* nothing to do */ }}>
                                         {route}{index < pathArray.length - 1 && '/'}
                                     </Path>
                                 ))

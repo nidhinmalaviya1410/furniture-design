@@ -14,6 +14,8 @@ const Gallery = () => {
     const [viewerIsOpen, setViewerIsOpen] = useState(false);
     const [categorySelected, setCategory] = useState("All");
 
+    const [pathName, setPathName] = useState("Home/Gallery");
+
     function importAll(r) {
         return r.keys();
     }
@@ -36,7 +38,7 @@ const Gallery = () => {
             });
         }
     });
-    console.log('staticPhotos', staticPhotos)
+
     let categoryPhotos = staticPhotos;
     let isAll = true;
     if (categorySelected === "All") {
@@ -52,6 +54,8 @@ const Gallery = () => {
     };
 
     const openCategory = (index, photo) => {
+        console.log('photo', photo);
+        setPathName(pathName + '/' + photo.category)
         setCategory(photo.category);
     };
 
@@ -64,7 +68,7 @@ const Gallery = () => {
 
     return (
         <>
-            <RouteDetail route="GALLERY" path="Home/Gallery" />
+            <RouteDetail route="GALLERY" path={pathName} />
             <div className="gallery-container">
 
                 <div className="gallery-grid">
@@ -73,7 +77,7 @@ const Gallery = () => {
                         return (
                             <React.Fragment>
                                 <div className='imageContainer'>
-                                    <img src={require(`${photo.src}`).default} key={index} />
+                                    <img src={require(`${photo.src}`).default} alt={index} />
                                     <div className='mybtnwrapper'>
                                         <div className='mybtn'>
                                             {isAll && (<ArrowCircleRightIcon fontSize='large' onClick={() => openCategory(index, photo)} style={{ marginRight: '52px', position: 'absolute' }}>Category</ArrowCircleRightIcon>)}

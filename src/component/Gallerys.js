@@ -20,10 +20,6 @@ const Gallerys = () => {
         setViewerIsOpen(false);
     };
 
-    const columnNumber = 10;
-    console.log("meet 1");
-
-
     function importAll(r) {
         return r.keys();
     }
@@ -40,7 +36,7 @@ const Gallerys = () => {
                         return (
                             <React.Fragment>
                                 <div className='imageContainer'>
-                                    <img src={photo.src} key={index} />
+                                    <img src={photo.src} alt={index} />
                                     <div className='mybtnwrapper'>
                                         <div className='mybtn'>
                                             <AddCircleOutlineIcon fontSize='large' onClick={() => openLightbox(index, photo)} >add_circle</AddCircleOutlineIcon>
