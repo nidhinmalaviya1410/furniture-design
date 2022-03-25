@@ -7,7 +7,6 @@ import main from '../images/about-main.jpg';
 const PageRoute = styled.div`
   width: 100%;
   height: 100px;
-  position: absolute;
   background-image: url(${main});
   display: flex;
   color: #fff;
@@ -61,24 +60,18 @@ const RouteDetail = (props) => {
     }
     return (
         <>
-            <div className="container-fulid" style={{ width: '100%', marginTop: '100px' }}>
-                <div className="row">
-                    <div className="col-lg-12">
-                        <PageRoute>
-                            <h2>{props.route}</h2>
-                            <PathTop >
-                                {pathArray.map((route, index) => (
-                                    <Path isClickable={index < pathArray.length - 1} onClick={index < pathArray.length - 1 ? () => handleClick(route) : () => {/* nothing to do */ }}>
-                                        {route}{index < pathArray.length - 1 && '/'}
-                                    </Path>
-                                ))
-                                }
-                            </PathTop>
+            <PageRoute>
+                <h2>{props.route}</h2>
+                <PathTop >
+                    {pathArray.map((route, index) => (
+                        <Path isClickable={index < pathArray.length - 1} onClick={index < pathArray.length - 1 ? () => handleClick(route) : () => {/* nothing to do */ }}>
+                            {route}{index < pathArray.length - 1 && '/'}
+                        </Path>
+                    ))
+                    }
+                </PathTop>
 
-                        </PageRoute>
-                    </div>
-                </div>
-            </div>
+            </PageRoute>
         </>
     )
 

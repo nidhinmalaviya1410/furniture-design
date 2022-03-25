@@ -14,7 +14,6 @@ justify-content:space-between;
 padding:1rem 2rem;
 width:100%; 
 background:transparent;
-position: fixed;
 font-size: 1rem;
 z-index: 30;
 transition: 0.8s all ease
@@ -90,7 +89,7 @@ const Navbar = ({ toggle }) => {
 
     const [colorChange, setColorchange] = useState(false);
     const changeNavbarColor = () => {
-        if (window.scrollY > 310) {
+        if (window.scrollY > 80) {
             setColorchange(true);
         }
         else {
@@ -117,10 +116,6 @@ const Navbar = ({ toggle }) => {
 
                     })
                     }
-                    {/* <NavMenuLinks to="/" exact activeClassName="menu_active" >HOME</NavMenuLinks>
-                    <NavMenuLinks to="/about" activeClassName="menu_active" >ABOUT US</NavMenuLinks>
-                    <NavMenuLinks to="/services" activeClassName="menu_active">SERVICES</NavMenuLinks>
-                    <NavMenuLinks to="/gallery" activeClassName="menu_active" >GALLERY</NavMenuLinks> */}
                 </NavMenu>
                 <NavBtn>
                     <Button to='/Contact' style={{ color: 'white', fontWeight: 'bold', textTransform: 'capitalize' }} >Contact Us</Button>
