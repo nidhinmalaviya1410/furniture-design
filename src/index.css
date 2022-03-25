@@ -35,35 +35,6 @@ code {
   }
 }
 
-/* route section */
-
-.page-route {
-  width: 100%;
-  height: 100px;
-  position: absolute;
-  background-image: url(images/about-main.jpg);
-  display: flex;
-  color: #fff;
-  font-weight: 600;
-  justify-content: space-between;
-  padding: 30px;
-}
-
-.page-route h2 {
-  margin-left: 100px;
-}
-
-@media only screen and (max-width: 542px) {
-  .page-route h2 {
-    margin-left: 0px;
-  }
-}
-
-.page-route p {
-  margin-right: 100px;
-  margin-top: 30px;
-}
-
 /* navbAR */
 
 .active {
@@ -124,7 +95,7 @@ code {
 
 @media only screen and (max-width: 542px) {
   .about_main {
-    padding: 60px 10px;
+    padding: 100px 10px 30px 10px;
   }
 }
 
@@ -182,6 +153,14 @@ code {
   margin: auto;
   padding: 50px;
 }
+
+@media only screen and (max-width: 765px) {
+  .customer {
+    margin: auto;
+    padding: 0px;
+  }
+}
+
 .customer img {
   margin-right: 15px;
 }
@@ -218,13 +197,15 @@ code {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  visibility: inherit;
   padding-top: 15%;
   padding-bottom: 8%;
+  background-position: center center;
+  background-size: 100% 100%;
   padding-left: 5%;
   padding-right: 5%;
   height: 450px;
   background-color: rgba(0, 0, 0, 0.5);
-  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -303,21 +284,10 @@ code {
   left: 680px !important;
   width: 4%;
 }
-@media only screen and (max-width: 1437px) {
-  .carousel .control-prev.control-arrow {
-    left: 650px !important;
-  }
-}
 
 .carousel .control-next.control-arrow {
   right: 680px !important;
   width: 4%;
-}
-
-@media only screen and (max-width: 1437px) {
-  .carousel .control-prev.control-arrow {
-    right: 650px !important;
-  }
 }
 
 .App {
@@ -335,22 +305,20 @@ code {
     display: none !important;
   }
   .myCarousel {
-    background: #fafafa;
+    background-image: url(images/carousal.png);
+    background-position: center center;
+    background-size: 100% 100%;
+    opacity: 1;
+    visibility: inherit;
+    z-index: 20;
     margin-top: -9%;
-    width: 88%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 8%;
-    padding-bottom: 12.5%;
-    padding-left: 5%;
-    padding-right: 5%;
-    border: 1px solid #ddd;
-    height: 269px;
-    color: #000;
+    width: 100%;
+    height: 299px;
+    color: #fff;
   }
 
   .myCarousel h3 {
-    color: #000;
+    color: #fff;
     font-weight: 100;
     letter-spacing: 0.2px;
     margin-bottom: 4px;
@@ -364,14 +332,14 @@ code {
     margin-top: 0;
     padding-top: 0;
     font-weight: 500;
-    color: #000;
+    color: #fff;
     font-size: 14px;
   }
 
   .myCarousel p {
     font-weight: 100 !important;
     line-height: 29px !important;
-    color: #000;
+    color: #fff;
     font-size: 15px;
     font-family: sans-serif;
     max-height: 67px;
@@ -417,10 +385,10 @@ html {
 }
 
 @media screen and (max-width: 540px) {
-.m-footer{
-  display: none !important;  
- }
- .main-footer{
-   padding-top: 0px !important;
- }
+  .m-footer {
+    display: none !important;
+  }
+  .main-footer {
+    padding-top: 0px !important;
+  }
 }

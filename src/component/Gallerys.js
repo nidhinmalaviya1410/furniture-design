@@ -1,22 +1,7 @@
 import React, { useState } from "react";
 import Carousel, { Modal, ModalGateway } from "react-images";
-import { makeStyles } from '@mui/styles';
 import { photos } from "./photos";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-
-const useStyles = makeStyles(theme => ({
-
-    paper: {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-    },
-    gallery: {
-        background: "#333",
-        border: '2px solid #333 !important'
-    }
-}));
-
 
 
 const Gallerys = () => {
@@ -24,7 +9,6 @@ const Gallerys = () => {
     const [currentImage, setCurrentImage] = useState(0);
     const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
-    const classes = useStyles();
 
     const openLightbox = (index, photo) => {
         setCurrentImage(index);
@@ -48,12 +32,6 @@ const Gallerys = () => {
     console.log(images);
     return (
         <div>
-            {/* <h2 style={{ textAlign: 'center', color: 'white', borderBottom: '2px solid #feb70e' }}>GALLERY</h2>
-
-            <Paper className={classes.paper}>
-                {/* <Hover /> */}
-            {/* <Gallery margin={columnNumber} photos={photos} onClick={openLightbox} className={classes.gallery} />  */}
-
 
             <div className="gallery-container1">
                 <h2 style={{ textAlign: 'center', color: 'white', borderBottom: '2px solid #feb70e', fontWeight: 'bold' }}>GALLERY</h2><br />
@@ -87,7 +65,7 @@ const Gallerys = () => {
                         </Modal>
                     ) : null}
                 </ModalGateway>
-                {/* </Paper> */}
+
             </div>
         </div>
     )

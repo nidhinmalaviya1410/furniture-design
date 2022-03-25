@@ -57,10 +57,11 @@ top:0;
 left:0;
 width:100vw;
 height:100vh;
-object-fit:cover;
+object-fit:fill;
 opacity: 0.5;
 
 `;
+
 const HeroContent = styled.div`
 position:relative;
 z-index:10;
@@ -147,7 +148,7 @@ const Hero = ({ slides }) => {
             setCurrent(current === length - 1 ? 0 : current + 1);
         };
 
-        timeout.current = setTimeout(nextSlide, 3000);
+        timeout.current = setTimeout(nextSlide, 100000);
 
         return function () {
             if (timeout.current) {

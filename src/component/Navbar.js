@@ -123,7 +123,7 @@ const Navbar = ({ toggle }) => {
                     <NavMenuLinks to="/gallery" activeClassName="menu_active" >GALLERY</NavMenuLinks> */}
                 </NavMenu>
                 <NavBtn>
-                    <Button to='/contact' style={{ color: 'white', fontWeight: 'bold', textTransform: 'capitalize' }} >Contact Us</Button>
+                    <Button to='/Contact' style={{ color: 'white', fontWeight: 'bold', textTransform: 'capitalize' }} >Contact Us</Button>
                 </NavBtn>
             </Nav>
 

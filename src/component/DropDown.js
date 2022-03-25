@@ -15,7 +15,7 @@ const DropdownContainer = styled.div`
     align-items:center;
     top:0;
     left:0;
-    transition:0.3s ease-in-out;
+    transition:0.5s ease-in-out;
     opacity:${({ isOpen }) => (isOpen ? '1' : '0')};
     top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
 `;
@@ -50,6 +50,7 @@ justify-content: center;
 color:#fff;
 cursor: pointer;
 transition: 0.2s ease-in-out;
+text-decoration:none;
 
 &: hover{
     color:#000d1a;

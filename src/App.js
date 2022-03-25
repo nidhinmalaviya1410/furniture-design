@@ -87,10 +87,10 @@ function App(props) {
       <Navbar toggle={toggle} />
       <Routes>
         <Route exact path="/" element={<Home></Home>}></Route>
-        <Route exact path="/about" element={<About></About>}></Route>
-        <Route exact path="/services" element={<Services></Services>}></Route>
-        <Route exact path="/gallery" element={<Gallery ></Gallery>}></Route>
-        <Route exact path="/contact" element={<Contact></Contact>}></Route>
+        <Route exact path="/About" element={<About></About>}></Route>
+        <Route exact path="/Service" element={<Services></Services>}></Route>
+        <Route exact path="/Gallery" element={<Gallery ></Gallery>}></Route>
+        <Route exact path="/Contact" element={<Contact></Contact>}></Route>
         <Route exact path="/singleservice" element={<SingleService></SingleService>}></Route>
         <Route exact path="/singleservice1" element={<SingleService1></SingleService1>}></Route>
         <Route exact path="/singleservice2" element={<SingleService2></SingleService2>}></Route>

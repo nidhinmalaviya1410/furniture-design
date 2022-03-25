@@ -25,7 +25,7 @@ const Contact = () => {
 
     return (
         <>
-            <RouteDetail route="SERVICES" path="Home/Service" />
+            <RouteDetail route="SERVICES" path="Home/Contact" />
             <MDBContainer style={{ padding: '130px 80px 80px 80px', color: '#feb70e' }}>
                 <MDBRow start="0">
                     <MDBCol md="6">
