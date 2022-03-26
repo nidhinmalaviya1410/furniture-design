@@ -1,14 +1,22 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./Footer.css";
+import styled from 'styled-components/macro';
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css"
-
 import '../index.css';
 
+const MainFooter = styled.div`
+  color: white;
+  background-color: #43474d;
+  padding-top: 3em;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  clear: both;
+`;
 
 const Footer = () => {
     return (
-        <div className="main-footer">
+        <MainFooter>
             <div className="container">
                 <div className="row m-footer">
                     {/* Column1 */}
@@ -25,11 +33,11 @@ const Footer = () => {
                     <div className="col">
                         <h4>Links</h4>
                         <ul className="list-unstyled">
-                            <li><NavLink to="/" className='navlink'>Home</NavLink></li>
-                            <li><NavLink to="/About" className='navlink'>About</NavLink></li>
-                            <li><NavLink to="/Service" className='navlink'>Services</NavLink></li>
-                            <li><NavLink to="/Gallery" className='navlink'>Gallery</NavLink></li>
-                            <li><NavLink to="/Contact" className='navlink'>Contact</NavLink></li>
+                            <li><NavLink to="/" className="navlink">Home</NavLink></li>
+                            <li><NavLink to="/About" className="navlink">About</NavLink></li>
+                            <li><NavLink to="/Service" className="navlink">Services</NavLink></li>
+                            <li><NavLink to="/Gallery" className="navlink">Gallery</NavLink></li>
+                            <li><NavLink to="/Contact" className="navlink">Contact</NavLink></li>
                         </ul>
                     </div>
                     {/* Column2 */}
@@ -62,7 +70,7 @@ const Footer = () => {
                     </p>
                 </div>
             </div>
-        </div>
+        </MainFooter>
     );
 }
 

@@ -12,6 +12,21 @@ const Main = styled.div`
  grid-gap: 8px;
  margin: 0 auto;
 
+ img{
+     outline: 1px solid white;
+     outline-offset: 6px;
+ }
+
+ h4{
+    text-align: center;
+    color: #feb70e;
+    font-family: Roboto;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+    margin: 25px 10px;
+ }
+
  @media screen and (max-width: 728px) {
     {
         grid-template-columns: repeat(1, 1fr);
@@ -69,43 +84,19 @@ const Services = () => {
             <Main>
                 <ImageBox>
                     <img src={service1} width="322" height="215" alt="1" onClick={() => navigate('/singleservice')}></img>
-                    <h4 style={{
-                        textAlign: 'center',
-                        color: '#feb70e',
-                        fontFamily: 'Roboto',
-                        fontWeight: '700',
-                        fontStyle: 'normal',
-                        textTransform: 'uppercase',
-                        margin: '25px 10px'
-                    }} onClick={() => navigate('/singleservice')}>Interior Services</h4>
+                    <h4 onClick={() => navigate('/singleservice')}>Interior Services</h4>
                 </ImageBox>
                 <ImageBox >
 
                     <img src={service1} width="322" height="215" alt="1" onClick={() => navigate('/singleservice1')}></img>
 
-                    <h4 style={{
-                        textAlign: 'center',
-                        color: '#feb70e',
-                        fontFamily: 'Roboto',
-                        fontWeight: '700',
-                        fontStyle: 'normal',
-                        textTransform: 'uppercase',
-                        margin: '25px 10px'
-                    }} onClick={() => navigate('/singleservice')}>TURNKEY SERVICES</h4>
+                    <h4 onClick={() => navigate('/singleservice')}>TURNKEY SERVICES</h4>
                 </ImageBox>
                 <ImageBox >
 
                     <img src={service1} width="322" height="215" alt="1" onClick={() => navigate('/singleservice2')}></img>
 
-                    <h4 style={{
-                        textAlign: 'center',
-                        color: '#feb70e',
-                        fontFamily: 'Roboto',
-                        fontWeight: '700',
-                        fontStyle: 'normal',
-                        textTransform: 'uppercase',
-                        margin: '25px 10px'
-                    }} onClick={() => navigate('/singleservice')}>FURNITURE AND SOFA</h4>
+                    <h4 onClick={() => navigate('/singleservice')}>FURNITURE AND SOFA</h4>
                 </ImageBox>
             </Main>
         </>
