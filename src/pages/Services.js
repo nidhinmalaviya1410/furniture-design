@@ -6,22 +6,45 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Main = styled.div`
  width: 100%;
- height:100%;
- display: flex;
+ display: grid;
+ grid-template-columns: repeat(1, 1fr);
+ max-width: 1200px; 
+ grid-gap: 8px;
+ margin: 0 auto;
 
- @media screen and (max-width: 768px){
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    margin-top: 80px !important;
+ @media screen and (max-width: 600px) {
+    {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
+ @media screen and (min-width: 600px) {
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 649px) {
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 900px) {
+    {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+//  @media screen and (max-width: 768px){
+//     width:100%;
+//     display:flex;
+//     flex-direction:column;
+//     margin-top: 80px !important;
+// }
 
 `;
 
 const ImageBox = styled.div`
-    width: 33.33%;
-    position: relative;
-    min-height: 1px;
+    
     padding-left: 15px;
     padding-right: 15px;
     box-sizing:border-box;
