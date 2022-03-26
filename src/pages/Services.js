@@ -12,34 +12,22 @@ const Main = styled.div`
  grid-gap: 8px;
  margin: 0 auto;
 
- @media screen and (max-width: 600px) {
+ @media screen and (max-width: 728px) {
     {
         grid-template-columns: repeat(1, 1fr);
     }
 }
- @media screen and (min-width: 600px) {
+ @media screen and (min-width: 728px) {
     {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media screen and (max-width: 649px) {
-    {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 1100px)  {
     {
         grid-template-columns: repeat(3, 1fr);
     }
 }
-
-//  @media screen and (max-width: 768px){
-//     width:100%;
-//     display:flex;
-//     flex-direction:column;
-//     margin-top: 80px !important;
-// }
 
 `;
 
@@ -50,6 +38,7 @@ const ImageBox = styled.div`
     box-sizing:border-box;
     margin-top: 50px;
     text-align: center;
+    cursor:pointer;
 
     @media screen and (max-width: 768px){
     width:100%;
@@ -88,7 +77,7 @@ const Services = () => {
                         fontStyle: 'normal',
                         textTransform: 'uppercase',
                         margin: '25px 10px'
-                    }}>Interior Services</h4>
+                    }} onClick={() => navigate('/singleservice')}>Interior Services</h4>
                 </ImageBox>
                 <ImageBox >
 
@@ -102,7 +91,7 @@ const Services = () => {
                         fontStyle: 'normal',
                         textTransform: 'uppercase',
                         margin: '25px 10px'
-                    }}>TURNKEY SERVICES</h4>
+                    }} onClick={() => navigate('/singleservice')}>TURNKEY SERVICES</h4>
                 </ImageBox>
                 <ImageBox >
 
@@ -116,7 +105,7 @@ const Services = () => {
                         fontStyle: 'normal',
                         textTransform: 'uppercase',
                         margin: '25px 10px'
-                    }}>FURNITURE AND SOFA</h4>
+                    }} onClick={() => navigate('/singleservice')}>FURNITURE AND SOFA</h4>
                 </ImageBox>
             </Main>
         </>

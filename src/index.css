@@ -112,7 +112,22 @@ code {
   line-height: 300px;
 }
 
-.about_main_desc h3 {
+.about_main_head {
+  width: 70%;
+  height: 5%;
+  margin-left: 120px;
+  padding-top: 50px;
+}
+
+@media only screen and (max-width: 912px) {
+  .about_main_head {
+    margin-left: 20px;
+    padding-top: 20px;
+  }
+}
+
+.about_main_head h3 {
+  max-width: 1100px;
   color: #feb70e;
   border-bottom-style: double;
   border-bottom-color: #fff;
@@ -173,6 +188,7 @@ code {
 }
 
 /*Gallery -page */
+
 .carousel-root {
   width: 100% !important;
   margin: auto !important;
@@ -195,8 +211,6 @@ code {
   background-image: url(images/carousal.png);
   margin-top: -6%;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
   visibility: inherit;
   padding-top: 15%;
   padding-bottom: 8%;
@@ -205,8 +219,8 @@ code {
   padding-left: 5%;
   padding-right: 5%;
   height: 450px;
-  background-color: rgba(0, 0, 0, 0.5);
   background-repeat: no-repeat;
+  opacity: 0.9;
 }
 
 .carousel .control-dots {

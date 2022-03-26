@@ -12,6 +12,7 @@ const PageRoute = styled.div`
   color: #fff;
   padding: 30px;
   padding-bottom: 10px;
+  opacity: 0.9;
 
   h2{
     display: flex;
@@ -29,6 +30,7 @@ const PageRoute = styled.div`
 const PathTop = styled.div`
   display: flex;
   align-self: flex-end;
+  opacity:1;
 
 @media screen and  (max-width:768px){
     font-size: 12px;
