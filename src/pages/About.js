@@ -21,6 +21,11 @@ const Main = styled.div`
         padding-bottom:15px;
     }
 }
+
+p{
+    margin-top:35px
+}
+
 `;
 
 const BottomMain = styled.div`

@@ -126,7 +126,7 @@ code {
 .about_main_head {
   width: 70%;
   height: 5%;
-  margin-left: 120px;
+  margin-left: 150px;
   padding-top: 50px;
 }
 
@@ -148,7 +148,6 @@ code {
   align-items: center;
   text-align: center;
   font-weight: 600;
-  margin-top: 35px;
   justify-content: end;
   padding: 10px;
   text-align: justify;
@@ -219,7 +218,7 @@ code {
 
 .myCarousel {
   /* background: #fafafa; */
-  background-image: url(images/carousal.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/carousal.png);
   margin-top: -6%;
   width: 100%;
   visibility: inherit;
@@ -231,7 +230,6 @@ code {
   padding-right: 5%;
   height: 450px;
   background-repeat: no-repeat;
-  opacity: 0.9;
 }
 
 .carousel .control-dots {

@@ -12,6 +12,12 @@ const MainFooter = styled.div`
   bottom: 0;
   width: 100%;
   clear: both;
+
+  @media screen and (max-width: 728px) {
+    {
+       padding-top: 0em;
+    }
+}
 `;
 
 const Footer = () => {

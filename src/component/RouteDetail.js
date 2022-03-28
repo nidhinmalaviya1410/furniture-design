@@ -7,12 +7,14 @@ import main from '../images/about-main.jpg';
 const PageRoute = styled.div`
   width: 100%;
   height: 100px;
-  background-image: url(${main});
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),url(${main});
   display: flex;
   color: #fff;
   padding: 30px;
   padding-bottom: 10px;
-  opacity: 0.9;
 
   h2{
     display: flex;
@@ -31,6 +33,7 @@ const PathTop = styled.div`
   display: flex;
   align-self: flex-end;
   opacity:1;
+  font-size: 12px;
 
 @media screen and  (max-width:768px){
     font-size: 12px;
@@ -39,9 +42,12 @@ const PathTop = styled.div`
 `;
 
 const Path = styled.div`
+letter-spacing: 1px;
+text-transform: uppercase;
 cursor: ${props => (props.isClickable ? 'pointer' : 'default')};
+color: ${props => (props.isClickable ? '#ffffff80' : 'default')};
 &:hover {
-    color: ${props => (props.isClickable && 'black')};
+    color: ${props => (props.isClickable && 'white')};
   }
 `;
 
