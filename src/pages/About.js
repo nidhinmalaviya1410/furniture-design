@@ -23,7 +23,8 @@ const Main = styled.div`
 }
 
 p{
-    margin-top:35px
+    margin-top:35px;
+    
 }
 
 `;
@@ -45,7 +46,7 @@ const About = () => {
     return (
         <>
 
-            <RouteDetail route="ABOUT US" path="Home/About" />
+            <RouteDetail route="ABOUT US" path="Home / About us" />
 
             <Main>
                 <div className="about_main_desc">

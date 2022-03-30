@@ -5,16 +5,22 @@ import './contact.scss';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RouteDetail from '../component/RouteDetail';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectedCaterory, addPathName } from '../component/Reducer/action';
+
+import { useNavigate } from 'react-router-dom';
 
 
 const Gallery = () => {
 
-
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const dispatch1 = useDispatch();
     const [currentImage, setCurrentImage] = useState(0);
     const [viewerIsOpen, setViewerIsOpen] = useState(false);
     const [categorySelected, setCategory] = useState("All");
 
-    const [pathName, setPathName] = useState("Home/Gallery");
+    const [pathName, setPathName] = useState("Home /Gallery");
 
     function importAll(r) {
         return r.keys();
@@ -53,10 +59,14 @@ const Gallery = () => {
         setViewerIsOpen(true);
     };
 
+
     const openCategory = (index, photo) => {
-        console.log('photo', photo);
-        setPathName(pathName + '/' + photo.category)
+
+        dispatch(selectedCaterory(photo + '$_$' + pathName + '/' + photo));
+
+        setPathName(pathName + '/' + photo);
         setCategory(photo.category);
+        navigate(index);
     };
 
     const closeLightbox = () => {
@@ -65,7 +75,6 @@ const Gallery = () => {
     };
 
     const marginValue = isAll ? '50px' : 0;
-
     return (
         <>
             <RouteDetail route="GALLERY" path={pathName} />
@@ -73,14 +82,13 @@ const Gallery = () => {
 
                 <div className="gallery-grid">
                     {categoryPhotos.map((photo, index) => {
-                        console.log(photo.src);
                         return (
                             <React.Fragment>
                                 <div className='imageContainer'>
                                     <img src={require(`${photo.src}`).default} alt={index} />
                                     <div className='mybtnwrapper'>
                                         <div className='mybtn'>
-                                            {isAll && (<ArrowCircleRightIcon fontSize='large' onClick={() => openCategory(index, photo)} style={{ marginRight: '52px', position: 'absolute' }}>Category</ArrowCircleRightIcon>)}
+                                            {isAll && (<ArrowCircleRightIcon fontSize='large' onClick={() => openCategory('/SubCategory', photo.category)} style={{ marginRight: '52px', position: 'absolute' }}>Category</ArrowCircleRightIcon>)}
                                             <AddCircleOutlineIcon fontSize='large' onClick={() => openLightbox(index, photo)} style={{ marginLeft: marginValue, position: 'absolute' }}>add_circle</AddCircleOutlineIcon>
                                             <h4>{photo.category}</h4>
                                         </div>

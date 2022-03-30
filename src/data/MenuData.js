@@ -1,9 +1,9 @@
 const MenuData = [
 
-    { title: 'HOME', link: '/' },
-    { title: 'ABOUT US', link: '/About' },
-    { title: 'SERVICES', link: '/Service', item: ['INTERIOR SERVICES', 'TURNKEY SERVICES', 'FURNITURE AND SOFA'] },
-    { title: 'GALLERY', link: '/Gallery' },
+    { title: 'HOME', link: '/', active: '0' },
+    { title: 'ABOUT US', link: '/About', active: '1' },
+    { title: 'SERVICES', link: '/Service', active: '2' },
+    { title: 'GALLERY', link: '/Gallery', active: '3' },
 
 ]
 

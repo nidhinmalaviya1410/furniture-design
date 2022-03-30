@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components/macro';
 import MenuData from '../data/MenuData';
 import { Button } from './Button';
 import { FaBars } from 'react-icons/fa';
+import logo from '../images/berlin-logo.png';
 import '../index.css';
 
 
@@ -14,8 +15,8 @@ justify-content:space-between;
 padding:1rem 2rem;
 width:100%; 
 background:transparent;
-font-size: 1rem;
 z-index: 30;
+position: fixed;
 transition: 0.8s all ease
    
 `;
@@ -27,8 +28,9 @@ align-items:center;
 padding:0 1rem;
 height:100%;
 cursor:pointer;
-font-weight:bold;
+font-weight:600;
 text-decoration:none;
+font-size: 12px;
 
 `;
 
@@ -69,6 +71,10 @@ ${NavLink};
     
 }
 
+&:active{
+ border-bottom: 1px solid #fff;
+}
+
 `;
 
 const NavBtn = styled.div`
@@ -77,7 +83,6 @@ const NavBtn = styled.div`
  border:2px solid #ffc451;
  margin-right:48px;
  display:flex;
- justify-content:;
 
  @media screen and (max-width: 768px){
     display:none;
@@ -102,7 +107,7 @@ const Navbar = ({ toggle }) => {
     return (
         <>
             <Nav className={colorChange ? 'navbar colorChange' : 'navbar'} >
-                <Logo to='/'>Furtine</Logo>
+                <Logo to='/'><img src={logo} alt="logo"></img></Logo>
                 <MenuBars onClick={toggle} />
                 <NavMenu >
 
@@ -118,7 +123,9 @@ const Navbar = ({ toggle }) => {
                     }
                 </NavMenu>
                 <NavBtn>
-                    <Button to='/Contact' style={{ color: 'white', fontWeight: 'bold', textTransform: 'capitalize' }} >Contact Us</Button>
+                    <Button to='/Contact' style={{
+                        color: 'white', fontWeight: '600', textTransform: 'uppercase', fontSize: '12px'
+                    }} >Contact Us</Button>
                 </NavBtn>
             </Nav>
 

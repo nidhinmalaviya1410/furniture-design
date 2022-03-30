@@ -24,7 +24,7 @@ const Main = styled.div`
 const SingleService1 = () => {
     return (
         <>
-            <RouteDetail route="SERVICES" path="Home/Service/TurnkeyService" />
+            <RouteDetail route="SERVICES" path="Home /Service/ Turnkey Service" />
             <div className='about_main_head'>
                 <h3><b>INTERIOR DESIGN</b></h3><br />
             </div>

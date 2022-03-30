@@ -11,15 +11,21 @@ const PageRoute = styled.div`
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ),url(${main});
+  background-position: center center;
   display: flex;
   color: #fff;
   padding: 30px;
   padding-bottom: 10px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  margin-top: 80px;
 
   h2{
     display: flex;
     flex: 1 2 50%;
     font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 1px;
 
     @media screen and  (max-width:768px){
         font-size: 18px;
@@ -33,10 +39,10 @@ const PathTop = styled.div`
   display: flex;
   align-self: flex-end;
   opacity:1;
-  font-size: 12px;
+  font-size: 10px;
 
 @media screen and  (max-width:768px){
-    font-size: 12px;
+    font-size: 10px;
 }
 
 `;
@@ -60,7 +66,7 @@ const RouteDetail = (props) => {
 
     const handleClick = (path) => {
         console.log(path);
-        if (path === 'Home') {
+        if (path === 'Home ') {
             navigate(`/`);
         } else {
             navigate(`/${path}`);

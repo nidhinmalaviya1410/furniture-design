@@ -80,7 +80,7 @@ const Services = () => {
 
     return (
         <>
-            <RouteDetail route="SERVICES" path="Home/Service" />
+            <RouteDetail route="SERVICES" path="Home / Service" />
             <Main>
                 <ImageBox>
                     <img src={service1} width="322" height="215" alt="1" onClick={() => navigate('/singleservice')}></img>

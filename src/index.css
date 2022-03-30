@@ -124,9 +124,9 @@ code {
 }
 
 .about_main_head {
-  width: 70%;
+  width: 30%;
   height: 5%;
-  margin-left: 150px;
+  margin-left: 62px;
   padding-top: 50px;
 }
 
@@ -147,11 +147,12 @@ code {
 .about_main_desc p {
   align-items: center;
   text-align: center;
-  font-weight: 600;
   justify-content: end;
   padding: 10px;
   text-align: justify;
   color: #feb70e;
+  font-size: 16px;
+  line-height: 1.66em;
 }
 
 .about_second_img {
@@ -218,7 +219,7 @@ code {
 
 .myCarousel {
   /* background: #fafafa; */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/carousal.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/carousal.jpg);
   margin-top: -6%;
   width: 100%;
   visibility: inherit;
@@ -320,7 +321,7 @@ code {
 @media only screen and (max-width: 934px) {
   .carousel-root {
     outline: 0;
-    width: 93% !important;
+    width: 100% !important;
     margin: auto !important;
   }
 
@@ -328,7 +329,7 @@ code {
     display: none !important;
   }
   .myCarousel {
-    background-image: url(images/carousal.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/carousal.jpg);
     background-position: center center;
     background-size: 100% 100%;
     opacity: 1;

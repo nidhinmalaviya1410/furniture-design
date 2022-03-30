@@ -13,6 +13,7 @@ import About from './pages/About';
 import SingleService from './component/SingleService';
 import SingleService1 from './component/SingleService1';
 import SingleService2 from './component/SingleService2';
+import SubCategory from './pages/SubCategory';
 import PropTypes from 'prop-types';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Box from '@mui/material/Box';
@@ -87,6 +88,7 @@ function App(props) {
         <Route exact path="/singleservice" element={<SingleService></SingleService>}></Route>
         <Route exact path="/singleservice1" element={<SingleService1></SingleService1>}></Route>
         <Route exact path="/singleservice2" element={<SingleService2></SingleService2>}></Route>
+        <Route exact path="/SubCategory" element={<SubCategory></SubCategory>}></Route>
       </Routes>
       <DropDown isOpen={isOpen} toggle={toggle} />
 
