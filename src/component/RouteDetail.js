@@ -35,6 +35,14 @@ const PageRoute = styled.div`
     
 `;
 
+const PageMain = styled.div`
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    margin: 0 auto;
+
+`;
+
 const PathTop = styled.div`
   display: flex;
   align-self: flex-end;
@@ -75,16 +83,17 @@ const RouteDetail = (props) => {
     return (
         <>
             <PageRoute>
-                <h2>{props.route}</h2>
-                <PathTop >
-                    {pathArray.map((route, index) => (
-                        <Path isClickable={index < pathArray.length - 1} onClick={index < pathArray.length - 1 ? () => handleClick(route) : () => {/* nothing to do */ }}>
-                            {route}{index < pathArray.length - 1 && '/'}
-                        </Path>
-                    ))
-                    }
-                </PathTop>
-
+                <PageMain>
+                    <h2>{props.route}</h2>
+                    <PathTop >
+                        {pathArray.map((route, index) => (
+                            <Path isClickable={index < pathArray.length - 1} onClick={index < pathArray.length - 1 ? () => handleClick(route) : () => {/* nothing to do */ }}>
+                                {route}{index < pathArray.length - 1 && '/'}
+                            </Path>
+                        ))
+                        }
+                    </PathTop>
+                </PageMain>
             </PageRoute>
         </>
     )

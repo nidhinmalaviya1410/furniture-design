@@ -20,14 +20,28 @@ const Main = styled.div`
 }
 `;
 
+const AboutMain = styled.div`
+ width: 100%;
+ display: flex;
+ max-width: 1100px;
+ margin: 0 auto;
+ display: flex-start;
+
+ @media screen and (max-width: 912px) {
+    {
+        margin-left: 20px;
+        padding-top: 20px;
+    }
+}
+`;
 
 const SingleService1 = () => {
     return (
         <>
             <RouteDetail route="SERVICES" path="Home /Service/ Turnkey Service" />
-            <div className='about_main_head'>
+            <AboutMain className='about_main_head'>
                 <h3><b>INTERIOR DESIGN</b></h3><br />
-            </div>
+            </AboutMain>
             <Main>
                 <div className="about_main_desc">
 
