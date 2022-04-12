@@ -124,17 +124,8 @@ code {
 }
 
 .about_main_head {
-  width: 30%;
   height: 5%;
-  margin-left: 62px;
   padding-top: 50px;
-}
-
-@media only screen and (max-width: 912px) {
-  .about_main_head {
-    margin-left: 20px;
-    padding-top: 20px;
-  }
 }
 
 .about_main_head h3 {

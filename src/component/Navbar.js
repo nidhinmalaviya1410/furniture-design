@@ -30,7 +30,7 @@ height:100%;
 cursor:pointer;
 font-weight:600;
 text-decoration:none;
-font-size: 12px;
+font-size: 14px;
 
 `;
 
