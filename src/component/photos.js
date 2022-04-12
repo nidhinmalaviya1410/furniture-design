@@ -1,10 +1,8 @@
-import image1 from "../pages/Categories/Bed/bed.jpg";
-import image2 from "../pages/Categories/kitchen/kitchen.jpg";
-import image3 from "../pages/Categories/other/other.jpg";
-import image4 from "../pages/Categories/Room-Furniture/room.jpg";
-import image5 from "../pages/Categories/wall-design/wall.jpg";
-
-
+import image1 from "../pages/Categories/TV/bed.jpg";
+import image2 from "../pages/Categories/KITCHEN/kitchen.jpg";
+import image3 from "../pages/Categories/OTHER/other.jpg";
+import image4 from "../pages/Categories/CEILING/room.jpg";
+import image5 from "../pages/Categories/DOOR-CNS/wall.jpg";
 
 
 export const photos = [
@@ -22,12 +20,10 @@ export const photos = [
     },
     {
         src: image4,
-        width: 6,
-        height: 4
+
     },
     {
         src: image5,
-        width: 6,
-        height: 4
+
     },
 ];
