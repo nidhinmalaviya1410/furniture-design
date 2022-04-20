@@ -21,6 +21,9 @@ const MainFooter = styled.div`
 `;
 
 const Footer = () => {
+    const executeScroll = () => {
+        document.getElementById('myHeaderDiv').scrollIntoView();
+    }
     return (
         <MainFooter>
             <div className="container">
@@ -29,32 +32,32 @@ const Footer = () => {
                     <div className="col">
                         <h4>Furtine</h4>
                         <ui className="list-unstyled">
-                            <li>04 , King Adda Center</li>
-                            <li>NewYork , USA </li>
-                            <li><span>Phone</span>: +80200025</li>
-                            <li>FurtineHome@gmail.com</li>
+                            <li>A241, Amrkunj Soc,</li>
+                            <li>Parmukh Chaya Road, Yogi Chowk,</li>
+                            <li>Varachha, Surat, Gujarat-395006</li>
+                            <li><span>Phone</span>: +91 97221 50272</li>
+                            <li>sweatmanipvc@gmail.com</li>
                         </ui>
                     </div>
                     {/* Column 2 */}
                     <div className="col">
                         <h4>Links</h4>
                         <ul className="list-unstyled">
-                            <li><NavLink to="/" className="navlink">Home</NavLink></li>
-                            <li><NavLink to="/About" className="navlink">About</NavLink></li>
-                            <li><NavLink to="/Service" className="navlink">Services</NavLink></li>
-                            <li><NavLink to="/Gallery" className="navlink">Gallery</NavLink></li>
-                            <li><NavLink to="/Contact" className="navlink">Contact</NavLink></li>
+                            <li><NavLink to="/" className="navlink" onClick={executeScroll}>Home</NavLink></li>
+                            <li><NavLink to="/About" className="navlink" onClick={executeScroll}>About</NavLink></li>
+                            <li><NavLink to="/Gallery" className="navlink" onClick={executeScroll}>Gallery</NavLink></li>
+                            <li><NavLink to="/Contact" className="navlink" onClick={executeScroll}>Contact</NavLink></li>
                         </ul>
                     </div>
                     {/* Column2 */}
                     <div className="col">
                         <h4>Our Product</h4>
                         <ui className="list-unstyled">
-                            <li>Chair</li>
+                            <li>TV SET</li>
                             <li>Sofa Chair</li>
-                            <li>Gamer Chair</li>
+                            <li>Door</li>
                             <li>Dining Table</li>
-                            <li>Tipoi</li>
+                            <li>BedRoom</li>
                         </ui>
                     </div>
                     {/* Column3 */}
@@ -71,7 +74,7 @@ const Footer = () => {
                 <hr />
                 <div className="row">
                     <p className="col-sm text-center">
-                        &copy;{new Date().getFullYear()} Furtine Home | All rights reserved |
+                        &copy;{new Date().getFullYear()} SwearMani PVC | All rights reserved |
                         Terms Of Service
                     </p>
                 </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import client1 from '../images/client1.png';
+import client1 from '../images/client1.jpg';
 import RouteDetail from './RouteDetail';
 import styled from 'styled-components/macro';
 import '../index.css';

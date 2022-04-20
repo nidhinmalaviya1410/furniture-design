@@ -82,12 +82,8 @@ function App(props) {
       <Routes>
         <Route exact path="/" element={<Home></Home>}></Route>
         <Route exact path="/About" element={<About></About>}></Route>
-        <Route exact path="/Service" element={<Services></Services>}></Route>
         <Route exact path="/Gallery" element={<Gallery ></Gallery>}></Route>
         <Route exact path="/Contact" element={<Contact></Contact>}></Route>
-        <Route exact path="/singleservice" element={<SingleService></SingleService>}></Route>
-        <Route exact path="/singleservice1" element={<SingleService1></SingleService1>}></Route>
-        <Route exact path="/singleservice2" element={<SingleService2></SingleService2>}></Route>
         <Route exact path="/SubCategory" element={<SubCategory></SubCategory>}></Route>
       </Routes>
       <DropDown isOpen={isOpen} toggle={toggle} />

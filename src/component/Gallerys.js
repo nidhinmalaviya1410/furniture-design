@@ -30,7 +30,7 @@ const Gallerys = () => {
         <div>
 
             <div className="gallery-container1">
-                <h2 style={{ textAlign: 'center', color: 'white', borderBottom: '2px solid #feb70e', fontWeight: 'bold' }}>GALLERY</h2><br />
+                <div style={{ textAlign: 'center', maxWidth: '300px', margin: 'auto', width: '50%', color: 'white', borderBottom: '2px solid #feb70e', fontWeight: 'bold' }}><h2 >TOP TICKS</h2></div><br />
                 <div className="gallery-grid">
                     {photos.map((photo, index) => {
                         return (

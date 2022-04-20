@@ -2,7 +2,7 @@ import React from "react";
 import '../index.css';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import main from '../images/about-main.jpg';
+import main from '../images/2076086.webp';
 
 const PageRoute = styled.div`
   width: 100%;

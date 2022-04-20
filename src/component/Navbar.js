@@ -106,29 +106,28 @@ const Navbar = ({ toggle }) => {
 
     return (
         <>
-            <Nav className={colorChange ? 'navbar colorChange' : 'navbar'} >
-                <Logo to='/'><img src={logo} alt="logo"></img></Logo>
-                <MenuBars onClick={toggle} />
-                <NavMenu >
+            <div id="myHeaderDiv">
+                <Nav className={colorChange ? 'navbar colorChange' : 'navbar'} >
+                    <Logo to='/'><img src={logo} alt="logo"></img></Logo>
+                    <MenuBars onClick={toggle} />
+                    <NavMenu >
 
-                    {MenuData.map((item, index) => {
-                        return (
-                            <NavMenuLinks to={item.link} key={index}>
-                                {item.title}
-                            </NavMenuLinks>
-
-                        );
-
-                    })
-                    }
-                </NavMenu>
-                <NavBtn>
-                    <Button to='/Contact' style={{
-                        color: 'white', fontWeight: '600', textTransform: 'uppercase', fontSize: '12px'
-                    }} >Contact Us</Button>
-                </NavBtn>
-            </Nav>
-
+                        {MenuData.map((item, index) => {
+                            return (
+                                <NavMenuLinks to={item.link} key={index}>
+                                    {item.title}
+                                </NavMenuLinks>
+                            );
+                        })
+                        }
+                    </NavMenu>
+                    <NavBtn>
+                        <Button to='/Contact' style={{
+                            color: 'white', fontWeight: '600', textTransform: 'uppercase', fontSize: '12px'
+                        }} >Contact Us</Button>
+                    </NavBtn>
+                </Nav>
+            </div>
         </>
     )
 }

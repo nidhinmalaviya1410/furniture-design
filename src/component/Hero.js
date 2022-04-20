@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components/macro';
 import { IoMdArrowRoundForward } from 'react-icons/io';
-import { IoArrowForward, IoArrowBack } from 'react-icons/io5'
+import { IoArrowForward, IoArrowBack } from 'react-icons/io5';
+import '../index.css';
 
 const HeroSection = styled.section`
 height:100vh;
