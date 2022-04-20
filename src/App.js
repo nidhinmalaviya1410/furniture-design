@@ -23,8 +23,6 @@ import Zoom from '@mui/material/Zoom';
 import Toolbar from '@mui/material/Toolbar';
 import Gallery from './pages/Gallery';
 
-const theme = {};
-
 function App(props) {
 
   const [isOpen, setIsOpen] = useState(false);

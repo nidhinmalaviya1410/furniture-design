@@ -1,8 +1,8 @@
 import React from 'react';
-import styled, { css } from 'styled-components/macro';
+import styled from 'styled-components/macro';
 import service1 from '../images/client1.jpg';
 import RouteDetail from '../component/RouteDetail';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Main = styled.div`
  width: 100%;

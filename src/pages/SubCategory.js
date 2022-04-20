@@ -1,45 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Carousel, { Modal, ModalGateway } from "react-images";
 import '../pages/contact.scss';
-import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RouteDetail from '../component/RouteDetail';
-import { useSelector, useDispatch } from 'react-redux';
-import { selectedCaterory } from '../component/Reducer/action';
+import { useSelector } from 'react-redux';
+import Image from 'material-ui-image'
 
 const SubCategory = (props) => {
 
     const selectedSubcategory = useSelector(state => state.selectedCaterory);
-
+    console.log('selectedSubcategory', selectedSubcategory, props);
     const pathDetails = selectedSubcategory?.split('$_$');
-    console.log('path', pathDetails);
     const [currentImage, setCurrentImage] = useState(0);
     const [viewerIsOpen, setViewerIsOpen] = useState(false);
     const [categorySelected, setCategory] = useState(pathDetails[0]);
+    const [imageArray, setImageArray] = useState([]);
 
+    useEffect(() => {
+        async function fetchMyAPI() {
+            let response = await fetch('https://artrueinfotech.com/dummy.php');
+            const upadtedCategory = await response.json();
+            setImageArray(upadtedCategory);
+        }
 
-    function importAll(r) {
-        return r.keys();
-    }
+        fetchMyAPI()
+    }, []);
     let categoryList = [];
-    let images = importAll(require.context("../pages/Categories", true, /\.(png|jpe?g|svg)$/));
     let staticPhotos = [];
 
-    images.forEach(image => {
-        let lastOccure = image.lastIndexOf('/');
-        let secondLastOccure = image.lastIndexOf('/', lastOccure - 1);
-
-        if (lastOccure > 0 && secondLastOccure > 0) {
-            let category = image.substring(secondLastOccure + 1, lastOccure);
-            if (categoryList.indexOf(category) === -1) {
-                categoryList.push(category);
-            }
+    imageArray?.response?.forEach(({ images, name }) => {
+        categoryList.push(name);
+        images.forEach(img => {
             staticPhotos.push({
-                src: `./Categories/${category}/${image.substring(lastOccure + 1)}`,
-                category: category
+                src: img,
+                category: name
             });
-        }
+        })
     });
 
     let categoryPhotos = staticPhotos;
@@ -70,11 +67,14 @@ const SubCategory = (props) => {
 
                 <div className="gallery-grid">
                     {categoryPhotos.map((photo, index) => {
-                        console.log(photo.src);
                         return (
                             <React.Fragment>
                                 <div className='imageContainer'>
-                                    <img src={require(`${photo.src}`).default} alt={index} />
+                                    <Image
+                                        style={{
+                                            background: 'rgba(100, 100, 100, 0.5)',
+                                        }}
+                                        src={photo.src} />
                                     <div className='mybtnwrapper'>
                                         <div className='mybtn'>
                                             <AddCircleOutlineIcon fontSize='large' onClick={() => openLightbox(index, photo)} style={{ marginLeft: marginValue, position: 'absolute' }}>add_circle</AddCircleOutlineIcon>
@@ -91,7 +91,7 @@ const SubCategory = (props) => {
                             <Carousel
                                 currentIndex={currentImage}
                                 views={categoryPhotos.map(x => ({
-                                    src: require(`${x.src}`).default,
+                                    src: x.src,
                                 }))}
                             />
                         </Modal>

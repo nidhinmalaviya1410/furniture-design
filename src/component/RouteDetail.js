@@ -28,9 +28,9 @@ const PageRoute = styled.div`
     letter-spacing: 1px;
 
     @media screen and  (max-width:768px){
+        flex: 1 2 30%;
         font-size: 18px;
     }
-
     }
     
 `;
@@ -50,7 +50,7 @@ const PathTop = styled.div`
   font-size: 10px;
 
 @media screen and  (max-width:768px){
-    font-size: 10px;
+    font-size: 8px;
 }
 
 `;
@@ -70,10 +70,9 @@ color: ${props => (props.isClickable ? '#ffffff80' : 'default')};
 const RouteDetail = (props) => {
     const navigate = useNavigate();
 
-    const pathArray = props.path.split('/');
+    const pathArray = props?.path?.split(`/`);
 
     const handleClick = (path) => {
-        console.log(path);
         if (path === 'Home ') {
             navigate(`/`);
         } else {
@@ -86,7 +85,7 @@ const RouteDetail = (props) => {
                 <PageMain>
                     <h2>{props.route}</h2>
                     <PathTop >
-                        {pathArray.map((route, index) => (
+                        {pathArray?.map((route, index) => (
                             <Path isClickable={index < pathArray.length - 1} onClick={index < pathArray.length - 1 ? () => handleClick(route) : () => {/* nothing to do */ }}>
                                 {route}{index < pathArray.length - 1 && '/'}
                             </Path>

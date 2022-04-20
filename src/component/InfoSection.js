@@ -33,6 +33,9 @@ order: ${({ reverse }) => (reverse ? '1' : '2')};
 h1{
     margin-bottom:1rem;
     font-size:clamp(1.5rem,6vw,2rem);
+    color: #f7f7f7;
+    font-family: 'Oakes Grotesk';
+    font-weight: 700;
 }
 
 p{
