@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Carousel, { Modal, ModalGateway } from "react-images";
-import { photos } from "./photos";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 
@@ -8,8 +7,27 @@ const Gallerys = () => {
 
     const [currentImage, setCurrentImage] = useState(0);
     const [viewerIsOpen, setViewerIsOpen] = useState(false);
+    const [imageArray, setImageArray] = useState([]);
 
+    useEffect(() => {
+        async function fetchMyAPI() {
+            const response = await fetch('https://artrueinfotech.com/dummy.php');
+            const json = await response.json();
+            setImageArray(json);
+        }
 
+        fetchMyAPI()
+    }, []);
+
+    const updatedImages = imageArray?.response?.filter(img => img.name === "Common");
+    const staticPhotos = [];
+    updatedImages?.forEach(({ images }) => {
+        images.forEach(img => {
+            staticPhotos.push({
+                src: img,
+            });
+        })
+    });
     const openLightbox = (index, photo) => {
         setCurrentImage(index);
         setViewerIsOpen(true);
@@ -19,20 +37,13 @@ const Gallerys = () => {
         setCurrentImage(0);
         setViewerIsOpen(false);
     };
-
-    function importAll(r) {
-        return r.keys();
-    }
-
-    const images = importAll(require.context('../images', false, /\.(png|jpe?g|svg)$/));
-    console.log(images);
     return (
         <div>
 
             <div className="gallery-container1">
                 <h2 style={{ textAlign: 'center', color: 'white', borderBottom: '2px solid #feb70e', fontWeight: 'bold' }}>GALLERY</h2><br />
                 <div className="gallery-grid">
-                    {photos.map((photo, index) => {
+                    {staticPhotos.map((photo, index) => {
                         return (
                             <React.Fragment>
                                 <div className='imageContainer'>
@@ -52,7 +63,7 @@ const Gallerys = () => {
                         <Modal onClose={closeLightbox}>
                             <Carousel
                                 currentIndex={currentImage}
-                                views={photos.map(x => ({
+                                views={staticPhotos.map(x => ({
                                     ...x,
                                     srcset: x.srcSet,
                                     caption: x.title

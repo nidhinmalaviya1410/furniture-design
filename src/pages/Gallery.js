@@ -1,48 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Carousel, { Modal, ModalGateway } from "react-images";
 import './contact.scss';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RouteDetail from '../component/RouteDetail';
-import { useSelector, useDispatch } from 'react-redux';
-import { selectedCaterory, addPathName } from '../component/Reducer/action';
-
+import { useDispatch } from 'react-redux';
+import { selectedCaterory } from '../component/Reducer/action';
+import Image from 'material-ui-image'
 import { useNavigate } from 'react-router-dom';
 
 
 const Gallery = () => {
-
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const dispatch1 = useDispatch();
     const [currentImage, setCurrentImage] = useState(0);
     const [viewerIsOpen, setViewerIsOpen] = useState(false);
     const [categorySelected, setCategory] = useState("All");
-
     const [pathName, setPathName] = useState("Home /Gallery");
+    const [imageArray, setImageArray] = useState([]);
 
-    function importAll(r) {
-        return r.keys();
-    }
+    useEffect(() => {
+        async function fetchMyAPI() {
+            const response = await fetch('https://artrueinfotech.com/dummy.php');
+            const json = await response.json();
+            setImageArray(json);
+        }
+
+        fetchMyAPI()
+    }, []);
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
     let categoryList = [];
-    let images = importAll(require.context("./Categories", true, /\.(png|jpe?g|svg)$/));
     let staticPhotos = [];
 
-    images.forEach(image => {
-        let lastOccure = image.lastIndexOf('/');
-        let secondLastOccure = image.lastIndexOf('/', lastOccure - 1);
-
-        if (lastOccure > 0 && secondLastOccure > 0) {
-            let category = image.substring(secondLastOccure + 1, lastOccure);
-            if (categoryList.indexOf(category) === -1) {
-                categoryList.push(category);
-            }
+    const updatedImages = imageArray?.response?.filter(img => img.name !== "Common");
+    updatedImages?.forEach(({ images, name }) => {
+        categoryList.push(name);
+        images.forEach(img => {
             staticPhotos.push({
-                src: `./Categories/${category}/${image.substring(lastOccure + 1)}`,
-                category: category
+                src: img,
+                category: name
             });
-        }
+        })
     });
 
     let categoryPhotos = staticPhotos;
@@ -54,14 +54,13 @@ const Gallery = () => {
         categoryPhotos = staticPhotos.filter(catePhoto => catePhoto.category === categorySelected);
     }
 
+
     const openLightbox = (index, photo) => {
         setCurrentImage(index);
         setViewerIsOpen(true);
     };
 
-
     const openCategory = (index, photo) => {
-
         dispatch(selectedCaterory(photo + '$_$' + pathName + '/' + photo));
 
         setPathName(pathName + '/' + photo);
@@ -85,7 +84,11 @@ const Gallery = () => {
                         return (
                             <React.Fragment>
                                 <div className='imageContainer'>
-                                    <img src={require(`${photo.src}`).default} alt={index} />
+                                    <Image
+                                        style={{
+                                            background: 'rgba(100, 100, 100, 0.5)',
+                                        }}
+                                        src={photo.src} />
                                     <div className='mybtnwrapper'>
                                         <div className='mybtn'>
                                             {isAll && (<ArrowCircleRightIcon fontSize='large' onClick={() => openCategory('/SubCategory', photo.category)} style={{ marginRight: '52px', position: 'absolute' }}>Category</ArrowCircleRightIcon>)}

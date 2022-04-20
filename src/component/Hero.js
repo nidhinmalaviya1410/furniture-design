@@ -17,7 +17,6 @@ display:flex;
 justify-content:center;
 align-items:center;
 overflow:hidden;
-position:relative;
 
 `
 const HeroSlide = styled.div`
@@ -105,14 +104,37 @@ margin-left:10px;
 `;
 
 const SliderButtons = styled.div`
-    position:absolute;
-    bottom:50px;
-    right:50px;
     display:flex;
+    justify-content: center;
+    align-items: center;
     z-index:10;
 `;
 
 const arrowButtons = css`
+position: absolute;
+top: 50%;
+left: 15px;
+width:50px;
+height:50px;
+color:#fff;
+cursor:pointer;
+border-radius:50px;
+background:#000;
+padding:10px;
+margin-right:1rem;
+user-select:none;
+transition:0.3s;
+
+&:hover{
+    background:#cd853f;
+    transform:scale(1.05);
+}
+`;
+
+const arrowButtonsR = css`
+position: absolute;
+top: 50%;
+right: 15px;
 width:50px;
 height:50px;
 color:#fff;
@@ -135,7 +157,7 @@ const PrevArrow = styled(IoArrowBack)`
 `;
 
 const NextArrow = styled(IoArrowForward)`
-    ${arrowButtons}
+    ${arrowButtonsR}
 `;
 
 const Hero = ({ slides }) => {

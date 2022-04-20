@@ -12,14 +12,12 @@ const Contact = () => {
     async function submit(e) {
         e.preventDefault();
         const response = await fetch(`https://artrueinfotech.com/furniture/mail/mail.php?defaultFormContactNameEx=${data.defaultFormContactNameEx}&defaultFormContactEmailEx=${data.defaultFormContactEmailEx}&defaultFormContactSubjectEx=${data.defaultFormContactSubjectEx}&defaultFormContactMessageEx=${data.defaultFormContactMessageEx}`);
-        console.log(response.json);
     }
 
     function handle(e) {
         const newdata = { ...data };
         newdata[e.target.id] = e.target.value;
         setData(newdata);
-        console.log(newdata);
     }
 
 
