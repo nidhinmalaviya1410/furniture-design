@@ -9,6 +9,10 @@ height:100vh;
 max-height:1100px;
 position:relative;
 overflow:hidden;
+
+@media (max-width: 767px){
+    height: 75vh;
+} 
 `;
 
 const HeroWrapper = styled.div`
@@ -47,10 +51,8 @@ justify-content:center;
     opacity:0.4;
     background:linear-gradient(0deg , rgba(0,0,0,0.2) 0% ,rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6) 100%  )
 
-}
+}`;
 
-
-`;
 const HeroImage = styled.img`
 position:absolute;
 top:0;
@@ -60,6 +62,9 @@ height:100vh;
 object-fit:fill;
 opacity: 0.5;
 
+@media (max-width: 767px){
+    height: 75vh;
+} 
 `;
 
 const HeroContent = styled.div`
@@ -71,6 +76,18 @@ max-width:1600px;
 width:calc(100%-100px); 
 color:#fff;
 opacity:1;
+
+@media (max-width: 540px){
+    max-width:550px;
+    display:flex;
+    margin: 0 auto;
+} 
+
+@media (max-width: 767px){
+    max-width:250px;
+    display:flex;
+    margin: 0 auto;
+} 
 
 ${`h1{
     font-size: 40px;
