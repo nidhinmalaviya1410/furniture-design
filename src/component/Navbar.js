@@ -108,7 +108,7 @@ const Navbar = ({ toggle }) => {
         <>
             <div id="myHeaderDiv">
                 <Nav className={colorChange ? 'navbar colorChange' : 'navbar'} >
-                    <Logo to='/'><img src={logo} alt="logo"></img></Logo>
+                    <Logo to='/'><img src={logo} alt="logo" width='100px' ></img></Logo>
                     <MenuBars onClick={toggle} />
                     <NavMenu >
 

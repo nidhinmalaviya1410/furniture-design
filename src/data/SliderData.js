@@ -4,7 +4,7 @@ import ImageEight from '../images/house-8.jpg';
 
 const SliderData = [
     {
-        title: 'WELCOME TO SWEATMANI PVC',
+        title: 'WELCOME TO SWEATMANI FURNITURE',
         price: 'Your choice of font is important, but the kind of “family” you choose is project-specific.',
         path: '/',
         label: 'View Home',
