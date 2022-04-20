@@ -4,12 +4,12 @@ import styled, { css } from 'styled-components/macro';
 import MenuData from '../data/MenuData';
 import { Button } from './Button';
 import { FaBars } from 'react-icons/fa';
-import logo from '../images/berlin-logo.png';
+import logo from '../images/logo.png';
 import '../index.css';
 
 
 const Nav = styled.nav`
-height:80px;
+height:90px;
 display:flex;
 justify-content:space-between;
 padding:1rem 2rem;
