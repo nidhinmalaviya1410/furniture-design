@@ -75,7 +75,7 @@ const Footer = () => {
                 <div className="row">
                     <p className="col-sm text-center">
                         &copy;{new Date().getFullYear()} SweatMani PVC | All rights reserved |
-                        Terms Of Service
+                        Designed By Artrue
                     </p>
                 </div>
             </div>
