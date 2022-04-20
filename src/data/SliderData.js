@@ -13,7 +13,7 @@ const SliderData = [
     },
     {
         title: 'INSPIRED BY INNOVATION',
-        price: 'Never is this principle more pertinent than when dealing with type, the bread and butter of Web-borne communication. A well-set paragraph of text is not supposed to wow the reader; the wowing should be left to the idea or observation for which the paragraph is a vehicle.',
+        price: 'Never is this principle more pertinent than when dealing with type, the bread and butter of Web-borne communication.',
         path: '/',
         label: 'View Home',
         image: ImageTwo,

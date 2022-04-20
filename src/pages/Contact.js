@@ -9,9 +9,10 @@ const Contact = () => {
 
     const [data, setData] = useState({ defaultFormContactNameEx: '', defaultFormContactEmailEx: '', defaultFormContactSubjectEx: '', defaultFormContactMessageEx: '' });
 
-    async function submit(e) {
+    function submit(e) {
         e.preventDefault();
-        const response = await fetch(`https://artrueinfotech.com/furniture/mail/mail.php?defaultFormContactNameEx=${data.defaultFormContactNameEx}&defaultFormContactEmailEx=${data.defaultFormContactEmailEx}&defaultFormContactSubjectEx=${data.defaultFormContactSubjectEx}&defaultFormContactMessageEx=${data.defaultFormContactMessageEx}`);
+        let response = fetch(`https://artrueinfotech.com/furniture/mail/mail.php?defaultFormContactNameEx=${data.defaultFormContactNameEx}&defaultFormContactEmailEx=${data.defaultFormContactEmailEx}&defaultFormContactSubjectEx=${data.defaultFormContactSubjectEx}&defaultFormContactMessageEx=${data.defaultFormContactMessageEx}`);
+        window.location.reload();
     }
 
     function handle(e) {
@@ -40,7 +41,6 @@ const Contact = () => {
                                 Phone Number :-
                             </label>
                             <p>+91 97221 50272</p>
-                            <p>+9170412 22563</p>
 
                             <br />
                             <label htmlFor="defaultFormContactSubjectEx" className="grey-text">

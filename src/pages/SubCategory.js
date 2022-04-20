@@ -78,7 +78,6 @@ const SubCategory = (props) => {
                                     <div className='mybtnwrapper'>
                                         <div className='mybtn'>
                                             <AddCircleOutlineIcon fontSize='large' onClick={() => openLightbox(index, photo)} style={{ marginLeft: marginValue, position: 'absolute' }}>add_circle</AddCircleOutlineIcon>
-                                            <h4>{photo.category}</h4>
                                         </div>
                                     </div>
                                 </div>

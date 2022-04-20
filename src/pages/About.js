@@ -62,7 +62,7 @@ const About = () => {
 
                 <div className="about_main_header" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingRight: '15px', paddingLeft: '15px' }}>
                     {/* <h2> Who We Are </h2> */}
-                    <img src={client1} width="300" height="200" alt="Natural" style={{
+                    <img src={client1} width="400" height="300" alt="Natural" style={{
                         outline: '1px solid white',
                         outlineOffset: '6px'
                     }} />
