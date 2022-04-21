@@ -46,6 +46,7 @@ const Contact = () => {
             response = await response.json();
             setMessage(response?.response[0]);
             setOpen(true);
+            window.location.reload();
         }
     }
 
@@ -110,29 +111,21 @@ const Contact = () => {
                     <MDBCol md="6">
                         <form>
                             <p className="h4 text-center mb-4">Write to us</p>
-                            <label htmlFor="name" className="grey-text">
-                                Your name
-                            </label>
-                            <input type="text" id="name" className="form-control" value={data.name} onChange={(e) => handle(e)} />
-                            {nameError && <div style={{ color: 'red' }}>Please enter name!</div>}
+
+                            <input type="text" id="name" className="form-control" placeholder='Enter Your Name' value={data.name} onChange={(e) => handle(e)} />
+                            {nameError && <div style={{ color: 'white' }}>Please enter name!</div>}
                             <br />
-                            <label htmlFor="email" className="grey-text" >
-                                Your email
-                            </label>
-                            <input type="email" id="email" className="form-control" value={data.email} onChange={(e) => handle(e)} />
-                            {emailError && <div style={{ color: 'red' }}>Please enter email!</div>}
+
+                            <input type="email" id="email" className="form-control" placeholder='Enter Your Email' value={data.email} onChange={(e) => handle(e)} />
+                            {emailError && <div style={{ color: 'white' }}>Please enter email!</div>}
                             <br />
-                            <label htmlFor="subject" className="grey-text" >
-                                Subject
-                            </label>
-                            <input type="text" id="subject" className="form-control" value={data.subject} onChange={(e) => handle(e)} />
-                            {subjectError && <div style={{ color: 'red' }}>Please enter subject!</div>}
+
+                            <input type="text" id="subject" className="form-control" placeholder='Enter The Subject' value={data.subject} onChange={(e) => handle(e)} />
+                            {subjectError && <div style={{ color: 'white' }}>Please enter subject!</div>}
                             <br />
-                            <label htmlFor="msg" className="grey-text" >
-                                Your message
-                            </label>
-                            <textarea type="text" id="msg" className="form-control" rows="3" value={data.msg} onChange={(e) => handle(e)} />
-                            {msgError && <div style={{ color: 'red' }}>Please enter message!</div>}
+
+                            <textarea type="text" id="msg" className="form-control" placeholder='Enter Your Message' rows="3" value={data.msg} onChange={(e) => handle(e)} />
+                            {msgError && <div style={{ color: 'white' }}>Please enter message!</div>}
                             <div className="text-center mt-4">
                                 <Button variant="contained" color="warning" onClick={(e) => submit(e)} endIcon={<SendIcon />}>
                                     Send
